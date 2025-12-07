@@ -1,11 +1,489 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <title>Ronks.ru — Скоро здесь будет сайт</title>
-</head>
-<body>
-  <h1>Ronks.ru</h1>
-  <p>Сайт в разработке. Возвращайтесь позже!</p>
-</body>
+	<head>		
+		<!-- set the encoding of your site -->
+		<meta charset="utf-8" />
+		<!-- set the viewport width and initial-scale on mobile devices -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- set the apple mobile web app capable -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<!-- set the HandheldFriendly -->
+		<meta name="HandheldFriendly" content="True" />
+		<!-- set the apple mobile web app status bar style -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<!-- set the description -->
+		<meta name="description" content="ronks.ru — агрегатор автозапчастей с поиском аналогов (кроссов)" />
+		<!-- set the Keyword -->
+		<meta name="keywords" content="ronks, автозапчасти, кроссы, поиск аналогов, агрегатор запчастей" />
+		<meta name="author" content="ronks.ru" />
+		<title>ronks.ru — агрегатор автозапчастей</title>
+		<!-- include the site stylesheet -->
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7COswald:400,700"
+			rel="stylesheet" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/plugins.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/font-awesome.min.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="style.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/colors.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/responsive.css" />
+		<!-- include the site stylesheet -->
+		<link rel="stylesheet" href="css/gridgum.css" />
+		<style class="color_css"></style>
+		<link rel="stylesheet" href="css/ronks.css" />
+		<link rel="stylesheet" href="css/ronks.css" />
+	</head>
+	<body>
+		<!-- Wrapper of the page -->
+		<div id="wrapper">
+			<!-- Header of the page -->
+			<header id="header">
+				<div class="container">
+					<div class="holder center-block">
+						<!-- Logo of the page -->
+						<div class="logo">
+							<a href="https://lk.ronks.ru">
+								<img src="images/logo.svg" alt="Ronks" class="light img-responsive width" />
+								<img src="images/logo-dark.svg" alt="Ronks" class="dark img-responsive width" />
+							</a>
+						</div>
+						<!-- Logo of the page end -->
+						<!-- Navbar of the page -->
+						<nav class="navbar navbar-default">
+							<div class="navbar-header">
+								<button
+									type="button"
+									class="navbar-toggle collapsed"
+									data-toggle="collapse"
+									data-target="#bs-example-navbar-collapse-1"
+									aria-expanded="false">
+									<span class="sr-only">Toggle navigation</span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+									<span class="icon-bar"></span>
+								</button>
+							</div>
+							<a href="https://lk.ronks.ru" class="btn btn-default btn-white">Личный кабинет</a>
+							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+								<ul class="nav navbar-nav navbar-right">
+									<li><a href="#" data-scroll-nav="0">О сервисе</a></li>
+									<li><a href="#" data-scroll-nav="1">Поиск кроссов</a></li>
+									<li><a href="#" data-scroll-nav="2">Для кого</a></li>
+									<li><a href="#" data-scroll-nav="3">Видео</a></li>
+									<li><a href="#" data-scroll-nav="4">Поставщики</a></li>
+								</ul>
+							</div>
+						</nav>
+						<!-- Navbar of the page end -->
+					</div>
+				</div>
+			</header>
+			<!-- Header of the page end -->
+			<!-- Main of the page -->
+			<main id="main">
+				<!-- Hero area of the page -->
+				<section
+					class="hero-area text-center overlay"
+					style="background-image: url(images/slide-1.jpg)"
+					data-scroll-index="0">
+					<div id="particles-js"></div>
+					<div class="container">
+						<div class="row">
+							<header
+								class="heading-holder col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+								<h1>
+									<span class="text-small">ronks.ru — Всё.Везде.Сразу.</span>
+									<span class="hero-main-title">Умный поиск запчастей и предложений поставщиков</span>
+								</h1>
+								<p>
+									Ronks объединяет предложения проверенных поставщиков автозапчастей и помогает быстро
+									находить оригиналы и аналоги по артикулу или номеру детали.
+								</p>
+							</header>
+						</div>
+						<div class="aligncenter">
+							<!--<img src="images/macbook.png" alt="image description m-top" class="img-responsive" />-->
+						</div>
+					</div>
+				
+				</section>
+				<!-- Hero area of the page end -->
+				<!-- Product Features of the page -->
+				<section class="container ronks-search" data-scroll-index="1">
+					<div class="row">
+						<header class="heading-wrap text-center">
+							<h2>Поиск кроссов автозапчастей</h2>
+						</header>
+						<div class="col-xs-12 col-md-8 col-md-offset-2">
+							<form id="search-form">
+								<label for="part-number" class="ronks-search-label">Номер запчасти или артикул</label>
+								<div class="ronks-search-row">
+									<input id="part-number" type="text" placeholder="Например, 06F 129 101 N" />
+									<button type="button" id="search-button">Найти кроссы</button>
+								</div>
+								<div id="error"></div>
+							</form>
+							<header class="heading-wrap text-center">
+								<h5>
+									Введите артикул или номер детали — Ronks сопоставит его с базой производителей и
+									вернёт оригиналы и их аналоги.
+								</h5>
+							</header>
+							<div id="tableContainer"></div>
+						</div>
+					</div>
+				</section>
+				<!-- Product Features of the page end -->
+				<!-- Features area of the page -->
+				<section class="features-area container" data-scroll-index="2">
+					<div class="row">
+						<header class="col-xs-12 heading-wrap col-sm-6 col-sm-offset-3 text-center">
+							<h2>Для кого сервис Ronks</h2>
+						</header>
+					</div>
+					<!-- Features of the page -->
+					<ul class="features-list">
+						<li>
+							<div class="icon-holder">
+								<img
+									src="images/speech-bubble.png"
+									width="54"
+									height="52"
+									alt="Автосервисы и СТО"
+									class="img-responsive" />
+							</div>
+							<h3><a href="#">Автосервисы и СТО</a></h3>
+							<p>
+								Быстро находите запчасти под заказ и предложения с нужными сроками поставки для
+								клиентов.
+							</p>
+						</li>
+						<li>
+							<div class="icon-holder">
+								<img
+									src="images/time-left.png"
+									width="56"
+									height="50"
+									alt="Оптовые и розничные продавцы"
+									class="img-responsive" />
+							</div>
+							<h3><a href="#">Оптовые и розничные продавцы</a></h3>
+							<p>
+								Сравнивайте цены и наличие у разных поставщиков, подбирайте аналоги и расширяйте
+								ассортимент.
+							</p>
+						</li>
+						<li>
+							<div class="icon-holder">
+								<img
+									src="images/download.png"
+									width="51"
+									height="45"
+									alt="Корпоративные парки и логистика"
+									class="img-responsive" />
+							</div>
+							<h3><a href="#">Корпоративные парки и логистика</a></h3>
+							<p>
+								Контролируйте закупки запчастей для автопарка и снижайте затраты за счёт прозрачного
+								выбора.
+							</p>
+						</li>
+					</ul>
+					<!-- Features of the page end -->
+				</section>
+				<!-- Features area of the page end -->
+				<!-- Demo block of the page -->
+				<aside class="demo-block">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 col-md-7">
+								<h2>ХОТИТЕ СТАТЬ ПОСТАВЩИКОМ В RONKS.RU?</h2>
+								<p>
+									Подключись к агрегатору уже сегодня — расширяй клиентскую базу без лишних усилий!.
+								</p>
+							</div>
+							<div class="col-xs-12 col-md-5">
+								<ul>
+									<li><a href="https://lk.ronks.ru" class="btn btn-default btn-white">Подать заявку</a></li>
+									<li><a href="https://lk.ronks.ru" class="btn btn-default btn-white">Попробовать сейчас</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</aside>
+				<!-- Demo block of the page end -->
+				<!-- Video block of the page -->
+				<aside class="video-block" data-scroll-index="3">
+					<div class="video overlay">
+						<img src="images/2600-430.jpg" alt="image description" class="img-responsive" />
+						<a href="#" class="ico-play js-ronks-video-trigger" data-video-src="video/ronks_video.mp4"></a>
+					</div>
+				</aside>
+				<!-- Video block of the page end -->
+
+				<!-- Trial block of the page -->
+				<section class="trial-block container" data-scroll-index="4">
+					<div class="row">
+						<div class="alignleft">
+							<img src="images/665.jpg" alt="Поставщики Ronks" class="img-responsive" />
+						</div>
+						<div class="col-xs-12 col-sm-6 descr">
+							<div class="align">
+								<header class="heading-wrap text-center">
+									<h2>Поставщики в системе Ronks.ru</h2>
+								</header>
+								<p>
+									В Ronks подключены Поставщики автозапчастей с разными ценовыми уровнями, географией и условиями
+									отгрузки. Клиенту не нужно обходить десятки сайтов — система показывает предложения
+									сразу.
+								</p>
+								<a href="https://ronks.ru" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-black"
+									>Подробнее о поставщиках</a
+								>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Trial block of the page end -->
+				<!-- Brands area of the page -->
+				<aside class="brands-area container">
+					<div class="row">
+						<header class="col-xs-12 heading-wrap col-sm-6 col-sm-offset-3 text-center">
+							<h2>Наши поставщики</h2>
+						</header>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							<!-- Logos list of the page -->
+							<ul class="list-unstyled line-slider">
+								<li>
+									<a href="https://shop.autoeuro.ru/" target="_blank">
+										<img
+											src="images/suppliers/ivers-avto.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://shate-m.ru/" target="_blank">
+										<img
+											src="images/suppliers/shotem.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://el.rossko.ru/" target="_blank">
+										<img
+											src="images/suppliers/rossko.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://etp.armtek.ru/" target="_blank">
+										<img
+											src="images/suppliers/armtek.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://berg.ru/" target="_blank">
+										<img
+											src="images/suppliers/berg.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://autopiter.ru/" target="_blank">
+										<img src="images/suppliers/avtopiter.png" 
+											 alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://itrade.forum-auto.ru/" target="_blank">
+										<img
+											src="images/suppliers/forum-avto.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://tmparts.ru/" target="_blank">
+										<img
+											src="images/suppliers/tiss.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://lk.favorit-parts.ru/" target="_blank">
+										<img
+											src="images/suppliers/finorit.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://www.autorus.ru/" target="_blank">
+										<img
+											src="images/suppliers/avto-rus.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://mostekauto.ru/" target="_blank">
+										<img
+											src="images/suppliers/mostekavto.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://moskvorechie.ru/" target="_blank">
+										<img
+											src="images/suppliers/mosvorechie.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://www.autoopt.ru/" target="_blank">
+										<img
+											src="images/suppliers/avto-aliance.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://автосоюз.рф/" target="_blank">
+										<img
+											src="images/suppliers/avto-souz.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://www.autobody.ru/" target="_blank">
+										<img
+											src="images/suppliers/forward.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://era-auto.ru/" target="_blank">
+										<img
+											src="images/suppliers/era-avto.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://market.tmtr.ru/" target="_blank">
+										<img
+											src="images/suppliers/track-motors.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://carreta.ru/" target="_blank">
+										<img
+											src="images/suppliers/carreta.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://kentek.ru/" target="_blank">
+										<img
+											src="images/suppliers/kentek.png"
+											alt="Client Image" />
+									</a>
+								</li>
+								<li>
+									<a href="https://trinity-parts.ru/" target="_blank">
+										<img
+											src="images/suppliers/triniti-parts.png"
+											alt="Client Image" />
+									</a>
+								</li>
+							</ul>
+							<!-- Logos list of the page end -->
+						</div>
+					</div>
+				</aside>
+				<!-- Brands area of the page end -->
+			</main>
+			<!-- Main of the page end -->
+			<!-- Footer of the page -->
+			<!-- Video modal -->
+			<div id="ronks-video-modal" class="ronks-video-modal" aria-hidden="true">
+				<div class="ronks-video-backdrop" data-ronks-video-close></div>
+				<div class="ronks-video-dialog" role="dialog" aria-modal="true" aria-label="Видео о сервисе Ronks">
+					<button type="button" class="ronks-video-close" data-ronks-video-close aria-label="Закрыть видео">&times;</button>
+					<video id="ronks-video-player" class="ronks-video-player" controls preload="metadata">
+						<source src="video/ronks_video.mp4" type="video/mp4" />
+						Ваш браузер не поддерживает воспроизведение видео.
+					</video>
+				</div>
+			</div>
+			<!-- Video modal end -->
+
+			<footer id="footer">
+				<!-- Aside of the page -->
+				<aside class="aside">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 text-center col-sm-6 col-sm-offset-3">
+								<div class="logo">
+									<a href="https://lk.ronks.ru"><img src="images/RONKS-35.svg" alt="Ronks" /></a>
+								</div>
+								<p>ВСЁ. ВЕЗДЕ. СРАЗУ.</p>
+								<!-- Social Networks of the page -->
+								<ul class="social-networks">
+									<li>
+										<a href="https://lk.ronks.ru"><img src="images/icons/icons8-telegram.png" text="Telegram" alt="Ronks" /></a>
+									</li>
+									<li>
+										<a href="https://lk.ronks.ru"><img src="images/icons/icons8-forum.png" text="Форум" alt="Forum" /></a>
+									</li>
+								</ul>
+								<!-- Social Networks of the page end -->
+							</div>
+						</div>
+					</div>
+				</aside>
+				<!-- Aside of the page end -->
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
+							<p>© <span id="year"></span> ronks.ru — агрегатор автозапчастей с поиском кроссов.</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- Footer of the page end -->
+			<!-- Back Top of the page -->
+			<span id="back-top" class="fa fa-angle-up"></span>
+			<div id="loader" class="loader-holder">
+				<div class="block"><img src="images/svg/hearts.svg" width="100" alt="loader" /></div>
+			</div>
+		</div>
+		<!-- Wrapper of the page end -->
+		<!-- include jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- include jQuery -->
+		<script src="js/plugins.js"></script>
+		<!-- include jQuery -->
+		<script src="js/jquery.main.js"></script>
+		<!-- include jQuery -->
+		<script src="js/particles.js"></script>
+		
+		<script src="js/ronks-video.js"></script>
+				
+		<div id="style-changer" data-src="style-changer.html"></div>
+		
+		<!-- Конфигурация API для GitHub Pages -->
+		<!-- Раскомментируйте и укажите URL вашего API сервера: -->
+		<!-- <script>
+			window.API_BASE_URL = 'https://your-api-domain.com';
+		</script> -->
+		<!-- Для локальной разработки (когда API на том же домене) оставьте пустым -->
+		
+		<script src="js/ronks-cross.js"></script>
+	</body>
 </html>

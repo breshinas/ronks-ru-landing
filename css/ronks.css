@@ -1,0 +1,262 @@
+		:root {
+		    --ronks-bg: #97d6df;
+		    --ronks-surface: #0b1721;
+		    --ronks-border: #1f2933;
+		    --ronks-text-main: #ffffff;
+		    --ronks-text-muted: #9ca3af;
+		    --ronks-accent: #ff6224;
+		}
+
+		/* Делаем основную часть заголовка отдельной строкой */
+		.hero-main-title {
+		    display: block;
+		}
+
+		/* Отключаем оверлей загрузчика, чтобы он не перекрывал страницу */
+		.loader-holder {
+		    display: none !important;
+		}
+
+		/* Cross-search block (About -> Поиск кроссов) */
+		.ronks-search {
+		    color: var(--ronks-text-main);
+		    position: relative;
+		    z-index: 2;
+		}
+
+		.ronks-search .heading-wrap h2 {
+		    text-transform: none;
+		}
+
+		#search-form {
+		    margin-top: 20px;
+		}
+
+		.ronks-search-label {
+		    display: block;
+		    margin-bottom: 1px;
+            margin-left: 1px;
+		    font-size: 14px;
+            color:rgba(0, 0, 0, 0.75);
+		}
+
+		.ronks-search-row {
+		    display: flex;
+		    flex-wrap: wrap;
+		    gap: 10px;
+		    margin-bottom: 8px;
+		}
+
+		#part-number {
+		    flex: 1 1 220px;
+		    padding: 10px 12px;
+		    border-radius: 4px;
+		    border: 1px solid rgba(255, 255, 255, 0.24);
+		    background: rgba(3, 16, 24, 0.95);
+		    color: #fff;
+		}
+
+		#part-number::placeholder {
+		    color: rgba(255, 255, 255, 0.5);
+		}
+
+		#search-button {
+		    padding: 10px 20px;
+		    border-radius: 4px;
+		    border: none;
+		    background: #FF6224;
+		    color: #fff;
+		    font-weight: 600;
+		    cursor: pointer;
+		    white-space: nowrap;
+		}
+
+		#search-button:hover {
+		    background: #EE4D0E;
+		}
+
+		#error {
+		    min-height: 20px;
+		    margin-top: 4px;
+		    font-size: 13px;
+		}
+
+		#tableContainer {
+		    margin-top: 18px;
+		    overflow-x: auto;
+		}
+
+		#tableContainer table {
+		    width: 100%;
+		    border-collapse: collapse;
+		    font-size: 13px;
+		    background: var(--ronks-surface);
+		}
+
+		#tableContainer th,
+		#tableContainer td {
+		    border: 1px solid var(--ronks-border);
+		    padding: 8px 10px;
+		    text-align: left;
+		}
+
+		#tableContainer th {
+		    background-color: rgba(0, 0, 0, 0.6);
+		}
+
+		#tableContainer tr:nth-child(even) {
+		    background-color: rgba(0, 0, 0, 0.3);
+		}
+
+		#tableContainer tr:nth-child(odd) {
+		    background-color: rgba(0, 0, 0, 0.18);
+		}
+
+		.clickable-row {
+		    cursor: pointer;
+		}
+
+		.clickable-row:hover {
+		    background-color: rgba(255, 98, 36, 0.16);
+		}
+
+		.results-search {
+		    margin-top: 8px;
+		    display: flex;
+		    gap: 8px;
+		    align-items: center;
+		}
+
+		.results-search input[type="text"] {
+		    flex: 1 1 220px;
+		    padding: 8px 10px;
+		    border-radius: 4px;
+		    border: 1px solid rgba(255, 255, 255, 0.24);
+		    background: rgba(3, 16, 24, 0.95);
+		    color: #fff;
+		    font-size: 13px;
+		}
+
+		.results-search input[type="text"]::placeholder {
+		    color: rgba(255, 255, 255, 0.52);
+		}
+
+		.results-search button {
+		    padding: 8px 14px;
+		    border-radius: 4px;
+		    border: none;
+		    background: #FF6224;
+		    color: #fff;
+		    font-weight: 600;
+		    cursor: pointer;
+		    white-space: nowrap;
+		    font-size: 13px;
+		}
+
+		.results-search-status {
+		    font-size: 12px;
+		    color: var(--ronks-text-muted);
+		}
+
+		.results-search-status--error {
+		    color: #fca5a5;
+		}
+
+		.more-results {
+		    margin-top: 8px;
+		    display: flex;
+		    justify-content: space-between;
+		    align-items: center;
+		    gap: 8px;
+		}
+
+		.results-counter {
+			    font-size: 12px;
+			    color: #000;
+			}
+			
+		/* Видео-оверлей Ronks */
+		.ronks-video-modal {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: none;
+			align-items: center;
+			justify-content: center;
+			z-index: 9999;
+		}
+		
+		.ronks-video-modal--open {
+			display: flex;
+		}
+		
+		.ronks-video-backdrop {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.75);
+		}
+		
+		.ronks-video-dialog {
+			position: relative;
+			max-width: 960px;
+			width: 90%;
+			background: #000;
+			border-radius: 6px;
+			overflow: hidden;
+			box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+		}
+		
+		.ronks-video-player {
+			display: block;
+			width: 100%;
+			height: auto;
+			background: #000;
+		}
+		
+		.ronks-video-close {
+			position: absolute;
+			top: 8px;
+			right: 10px;
+			border: none;
+			background: transparent;
+			color: #fff;
+			font-size: 26px;
+			line-height: 1;
+			cursor: pointer;
+			z-index: 1;
+		}
+		
+		.ronks-video-close:focus {
+			outline: 2px solid var(--ronks-accent);
+			outline-offset: 2px;
+		}
+		
+			.more-results-button,
+		.collapse-results-button {
+		    padding: 8px 14px;
+		    border-radius: 4px;
+		    border: none;
+		    background: #FF6224;
+		    color: #fff;
+		    font-size: 13px;
+		    font-weight: 600;
+		    cursor: pointer;
+		    display: inline-flex;
+		    align-items: center;
+		    gap: 6px;
+		}
+		
+		.more-results-button:hover,
+		.collapse-results-button:hover {
+		    background: #EE4D0E;
+		}
+
+		.highlight-row {
+		    outline: 2px solid var(--ronks-accent);
+		    outline-offset: -2px;
+		}
