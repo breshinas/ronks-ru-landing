@@ -4,14 +4,9 @@
 		<!-- set the encoding of your site -->
 		<meta charset="utf-8" />
 		<script>
-		  (function() {
-		    const target = "ronks.ru";
-		    const currentHost = window.location.hostname;
-		
-		    if (currentHost !== target) {
-		      window.location.href = "https://" + target + window.location.pathname + window.location.search;
-		    }
-		  })();
+if (location.hostname !== "ronks.ru") {
+  location.replace("https://ronks.ru");
+}
 		</script>
 		<!-- set the viewport width and initial-scale on mobile devices -->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
