@@ -983,27 +983,40 @@ a:hover, a:focus, a.active {
 }
 
 .btn-default.btn-white {
-  border-radius: 99px;
-  border-color: #fff;
-  background: none;
-  color: #fff;
+  /* Кнопки на тёмном фоне: белый контур и текст, фон прозрачный */
+  border-radius: 999px;
+  border-color: #ffffff;
+  background: transparent;
+  color: #ffffff;
+}
+
+.btn-default.btn-white:hover, .btn-default.btn-white:focus, .btn-default.btn-white:active {
+  background: #FF6224;
+  border-color: #FF6224;
+  color: #ffffff;
+}
+  color: #ffffff;
 }
 
 .btn-default.btn-black {
-    padding: 10px 20px;
-		    border-radius: 99px;
-		    border: none;
-		    background: #FF6224;
-		    color: #fff;
-		    font-weight: 600;
-		    cursor: pointer;
-		    white-space: nowrap;
-		}
+  /* Кнопки на светлом фоне: чёрный контур и текст, белый фон */
+  padding: 10px 20px;
+  border-radius: 999px;
+  border: 2px solid #111827;
+  background: #ffffff;
+  color: #111827;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
 
-.btn-default.btn-black:hover .btn-black:focus .btn-black:active {
-		    background: #EE4D0E;
-            color: #fff;
-		}
+.btn-default.btn-black:hover,
+.btn-default.btn-black:focus,
+.btn-default.btn-black:active {
+  background: #FF6224;
+  border-color: #FF6224;
+  color: #ffffff; /* текст всегда белый */
+}
 
 .sticky-header.sticky .btn-default.btn-white {
   color: #222222;
@@ -1014,10 +1027,7 @@ a:hover, a:focus, a.active {
   color: #fff;
 }
 
-.btn-default.btn-white:hover, .btn-default.btn-white:focus, .btn-default.btn-white:active {
-  border-color: #222222;
-  background: #222222;
-}
+/* Ховеры для btn-white определены выше с оранжевым цветом */
 
 .btn-default .icon {
   position: absolute;
@@ -1042,6 +1052,7 @@ a:hover, a:focus, a.active {
 .btn-info:hover, .btn-info:focus, .btn-info:active {
   background: #222222;
   border-color: #222222;
+  color: #ffffff;
 }
 
 /*------------------------------------------------------------------
@@ -1262,8 +1273,9 @@ a:hover, a:focus, a.active {
   font-size: 14px;
   line-height: 26px;
   font-weight: 300;
-  margin-bottom: 60px;
-  padding: 56px 0 0;
+  margin-bottom: 0;
+  padding: 56px 0 40px; /* вернули небольшой внутренний отступ снизу, как в оригинале */
+}
   position: relative;
   z-index: 1;
   background-size: cover;
@@ -1646,7 +1658,10 @@ a:hover, a:focus, a.active {
   color: #fff;
 }
 
-.demo-block ul a:hover, .demo-block ul a:focus, .demo-block ul a:active {
+/* Для обычных ссылок в блоке, но не для кнопок */
+.demo-block ul a:not(.btn):hover,
+.demo-block ul a:not(.btn):focus,
+.demo-block ul a:not(.btn):active {
   color: #222222;
 }
 
@@ -1659,6 +1674,7 @@ a:hover, a:focus, a.active {
   line-height: inherit;
   font-weight: inherit;
   min-width: 167px;
+  border-radius: 999px; /* как другие круглые кнопки */
 }
 
 .demo-block p {
@@ -2060,6 +2076,7 @@ a:hover, a:focus, a.active {
 .trial-block .btn,
 .trial-block .btn-info {
   min-width: 186px;
+  border-radius: 999px; /* как у остальных круглых кнопок */
 }
 
 .trial-block p {
@@ -2130,7 +2147,7 @@ a:hover, a:focus, a.active {
   color: #d9dbdc;
   text-align: center;
   padding-bottom: 77px;
-  background-color: #021116;
+  background-color: #333333; /* выравниваем с остальными тёмными секциями */
 }
 
 /*------------------------------------------------------------------

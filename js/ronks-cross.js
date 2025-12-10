@@ -47,7 +47,14 @@
 					const data = await res.json();
 
 					if (!res.ok) {
-						throw new Error(data.error || "Ошибка сервера");
+						const msg = (data && data.error) ? String(data.error) : "";
+						// Специально обрабатываем кейс "Артикул не найден" –
+						// просто показываем "Аналоги не найдены" в таблице без верхнего сообщения.
+						if (msg.toLowerCase().includes("артикул") && msg.toLowerCase().includes("не найден")) {
+							if (tableEl) tableEl.innerHTML = "<p>Аналоги не найдены.</p>";
+							return;
+						}
+						throw new Error(msg || "Ошибка сервера");
 					}
 
 					if (!data.analogList || !data.analogList.a || !data.analogList.a.length) {
@@ -59,8 +66,10 @@
 					renderTable(rows);
 				} catch (err) {
 					console.error("Ошибка:", err);
+					const message = (err && err.message) || "";
+
 					if (errorEl) {
-						errorEl.textContent = "Не удалось загрузить данные: " + err.message;
+						errorEl.textContent = "Не удалось загрузить данные: " + message;
 						errorEl.classList.add("results-search-status--error");
 					}
 					if (tableEl) tableEl.innerHTML = "";
@@ -143,11 +152,13 @@
 			  </table>
 			`;
 
-				let controlsHtml = `<div class="more-results"><span class="results-counter">Показано ${visibleCount} из ${total}</span>`;
+				let controlsHtml = `<div class="more-results"><div class="more-results-top"><span class="results-counter">Показано ${visibleCount} из ${total}</span></div>`;
 
-				if (total > PAGE_SIZE) {
+				if (total > 0) {
 					const remainingNow = Math.max(total - visibleCount, 0);
 					const toShowNow = Math.min(PAGE_SIZE, remainingNow);
+
+					controlsHtml += `<div class="more-results-buttons">`;
 
 					if (remainingNow > 0) {
 						controlsHtml += `
@@ -174,6 +185,20 @@
 					  </button>
 					`;
 					}
+
+					// Кнопка "Сброс" на одном уровне с другими кнопками
+					controlsHtml += `
+					  <button
+						  type="button"
+						  class="reset-results-button"
+						  id="reset-results-button"
+						  title="Сбросить поиск и вернуться к исходному состоянию"
+					  >
+						<span>Сброс</span>
+					  </button>
+					`;
+
+					controlsHtml += `</div>`; // .more-results-buttons
 				}
 
 				controlsHtml += "</div>";
@@ -239,6 +264,28 @@
 					});
 				}
 
+				const resetBtn = document.getElementById("reset-results-button");
+				if (resetBtn) {
+					resetBtn.addEventListener("click", () => {
+						allItems = [];
+						visibleCount = 0;
+						pendingScrollIndex = null;
+						if (input) input.value = "";
+						if (errorEl) {
+							errorEl.textContent = "";
+							errorEl.classList.remove("results-search-status--error");
+						}
+					if (tableEl) tableEl.innerHTML = "";
+
+					const searchSection = document.querySelector(".ronks-search");
+					if (searchSection) {
+						const rect = searchSection.getBoundingClientRect();
+						const offset = 120; // примерно высота шапки
+						const top = rect.top + window.scrollY - offset;
+						window.scrollTo({ top: top < 0 ? 0 : top, behavior: "smooth" });
+					}
+				});
+				}
 				if (pendingScrollIndex !== null) {
 					const row = document.querySelector(`tr[data-row-index="${pendingScrollIndex}"]`);
 					if (row) {

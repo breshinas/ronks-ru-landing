@@ -7,9 +7,39 @@
 		    --ronks-accent: #ff6224;
 		}
 
-		/* Делаем основную часть заголовка отдельной строкой */
+		/* Делаем основную часть заголовка отдельной строкой и усиливаем заголовок на главном экране */
 		.hero-main-title {
 		    display: block;
+		}
+
+		/* Общие правки героя: больше высота, крупнее заголовок, больше отступ между заголовком и описанием */
+		.hero-area h1 {
+		    margin-bottom: 24px;
+		}
+
+		.hero-area .hero-main-title {
+		    font-family: "Oswald", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    font-weight: 700;
+		    font-size: 30px;
+		    line-height: 38px;
+		    letter-spacing: 1.2px;
+		}
+
+		.hero-area p {
+		    font-size: 15px;
+		    line-height: 26px;
+		}
+
+		@media (min-width: 992px) {
+		    .hero-area h1 {
+		        font-size: 32px;
+		        line-height: 40px;
+		    }
+
+		    .hero-area .hero-main-title {
+		        font-size: 46px;
+		        line-height: 54px;
+		    }
 		}
 
 		/* Отключаем оверлей загрузчика, чтобы он не перекрывал страницу */
@@ -19,12 +49,30 @@
 
 		/* Cross-search block (About -> Поиск кроссов) */
 		.ronks-search {
-		    color: var(--ronks-text-main);
+		    color: #51595b;
 		    position: relative;
 		    z-index: 2;
+		    background: transparent; /* как в исходном варианте */
+		    padding-top: 0;
+		    padding-bottom: 40px;
+		    margin-top: 0;
 		}
 
-		.ronks-search .heading-wrap h2 {
+		/* На всякий случай явно убираем возможный margin сверху между hero и поиском */
+		.hero-area + .ronks-search {
+		    margin-top: 0;
+		}
+
+		/* Заголовок блока поиска кроссов использует общий стиль .heading-wrap h2 */
+
+		/* Подзаголовок под строкой поиска: чуть крупнее и полужирный */
+		.ronks-search .heading-wrap h5 {
+		    font: 600 15px/22px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    color: #000000;
+		}
+
+		/* Сохраняем правильное написание бренда внутри строки с text-transform: lowercase */
+		.brand-name {
 		    text-transform: none;
 		}
 
@@ -34,10 +82,10 @@
 
 		.ronks-search-label {
 		    display: block;
-		    margin-bottom: 1px;
-            margin-left: 1px;
-		    font-size: 14px;
-            color:rgba(0, 0, 0, 0.75);
+		    margin-bottom: 6px;
+		    margin-left: 1px;
+		    font: 400 14px/20px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    color: rgba(0, 0, 0, 0.85);
 		}
 
 		.ronks-search-row {
@@ -51,34 +99,63 @@
 		    flex: 1 1 220px;
 		    padding: 10px 12px;
 		    border-radius: 4px;
-		    border: 1px solid rgba(255, 255, 255, 0.24);
-		    background: rgba(3, 16, 24, 0.95);
-		    color: #fff;
+		    border: 1px solid rgba(0, 0, 0, 0.16);
+		    background: #ffffff;
+		    color: #111827;
+		    font-size: 14px;
 		}
 
 		#part-number::placeholder {
-		    color: rgba(255, 255, 255, 0.5);
+		    color: rgba(15, 23, 42, 0.5);
 		}
 
-		#search-button {
-		    padding: 10px 20px;
-		    border-radius: 4px;
-		    border: none;
-		    background: #FF6224;
-		    color: #fff;
+		/* Кнопки в блоке поиска и результатах: стиль как у "Личный кабинет" */
+		#search-button,
+		.results-search button,
+		.more-results-button,
+		.collapse-results-button,
+		.reset-results-button {
+		    padding: 10px 24px;
+		    border-radius: 999px;
+		    border: 2px solid #111827;
+		    background: transparent;
+		    color: #111827;
 		    font-weight: 600;
 		    cursor: pointer;
 		    white-space: nowrap;
+		    text-transform: uppercase;
+		    font-size: 13px;
+		    letter-spacing: 0.5px;
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: center;
+		    gap: 6px;
+		    transition: background 0.25s ease, border-color 0.25s ease, transform 0.1s ease;
 		}
 
-		#search-button:hover {
-		    background: #EE4D0E;
+#search-button:hover,
+		.results-search button:hover,
+		.more-results-button:hover,
+		.collapse-results-button:hover,
+		.reset-results-button:hover {
+		    background: #FF6224;
+		    border-color: #FF6224;
+		    color: #ffffff;
+		    transform: translateY(-1px);
+		}
+
+		#search-button:active,
+		.results-search button:active,
+		.more-results-button:active,
+		.collapse-results-button:active {
+		    transform: translateY(0);
 		}
 
 		#error {
 		    min-height: 20px;
 		    margin-top: 4px;
-		    font-size: 13px;
+		    font-size: 14px;
+		    font-weight: 600; /* "Введите артикул" и другие служебные сообщения */
 		}
 
 		#tableContainer {
@@ -93,12 +170,13 @@
 		    background: var(--ronks-surface);
 		}
 
-		#tableContainer th,
-		#tableContainer td {
-		    border: 1px solid var(--ronks-border);
-		    padding: 8px 10px;
-		    text-align: left;
-		}
+#tableContainer th,
+#tableContainer td {
+    border: 1px solid var(--ronks-border);
+    padding: 8px 10px;
+    text-align: left;
+    color: #ffffff; /* белый текст в таблице результатов */
+}
 
 		#tableContainer th {
 		    background-color: rgba(0, 0, 0, 0.6);
@@ -108,9 +186,15 @@
 		    background-color: rgba(0, 0, 0, 0.3);
 		}
 
-		#tableContainer tr:nth-child(odd) {
-		    background-color: rgba(0, 0, 0, 0.18);
-		}
+#tableContainer tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+#tableContainer p {
+    font-size: 16px;
+    font-weight: 700; /* "Аналоги не найдены" / служебные подписи */
+    color: #ffffff;
+}
 
 		.clickable-row {
 		    cursor: pointer;
@@ -141,38 +225,45 @@
 		    color: rgba(255, 255, 255, 0.52);
 		}
 
-		.results-search button {
-		    padding: 8px 14px;
-		    border-radius: 4px;
-		    border: none;
-		    background: #FF6224;
-		    color: #fff;
-		    font-weight: 600;
-		    cursor: pointer;
-		    white-space: nowrap;
-		    font-size: 13px;
-		}
-
 		.results-search-status {
 		    font-size: 12px;
 		    color: var(--ronks-text-muted);
 		}
 
-		.results-search-status--error {
+.results-search-status--error {
 		    color: #fca5a5;
+		    font-size: 15px;
+		    font-weight: 700; /* "Ничего не найдено" при поиске в таблице */
 		}
 
 		.more-results {
-		    margin-top: 8px;
+		    margin-top: 16px;
 		    display: flex;
-		    justify-content: space-between;
+		    flex-wrap: wrap;
 		    align-items: center;
+		    justify-content: space-between;
 		    gap: 8px;
+		}
+
+		.more-results-top {
+		    text-align: left;
+		    flex: 1 1 auto;
+		}
+
+		.more-results-buttons {
+		    text-align: right;
+		    flex: 0 0 auto;
+		}
+
+		.more-results-buttons .more-results-button,
+		.more-results-buttons .collapse-results-button,
+		.more-results-buttons .reset-results-button {
+		    margin: 0 4px;
 		}
 
 		.results-counter {
 			    font-size: 12px;
-			    color: #000;
+			    color: #111827;
 			}
 			
 		/* Видео-оверлей Ronks */
@@ -236,24 +327,9 @@
 			outline-offset: 2px;
 		}
 		
-			.more-results-button,
+		.more-results-button,
 		.collapse-results-button {
-		    padding: 8px 14px;
-		    border-radius: 4px;
-		    border: none;
-		    background: #FF6224;
-		    color: #fff;
-		    font-size: 13px;
-		    font-weight: 600;
-		    cursor: pointer;
-		    display: inline-flex;
-		    align-items: center;
-		    gap: 6px;
-		}
-		
-		.more-results-button:hover,
-		.collapse-results-button:hover {
-		    background: #EE4D0E;
+		    /* стили заданы общим правилом выше */
 		}
 
 		.highlight-row {
@@ -276,4 +352,42 @@
 		.aside .logo a {
 			display: block;
 			width: fit-content;
+		}
+
+		/* Отступы и сетка для секции "Для кого сервис" */
+		.features-area {
+		    padding-top: 60px;
+		    padding-bottom: 60px;
+		}
+
+		.features-area .heading-wrap {
+		    margin-bottom: 40px;
+		}
+
+		.features-list {
+		    max-width: 1120px;
+		    margin-left: auto;
+		    margin-right: auto;
+		}
+
+		.features-list li {
+		    margin-bottom: 40px;
+		}
+
+		@media (min-width: 992px) {
+		    .features-list {
+		        display: flex;
+		        justify-content: space-between;
+		        gap: 40px;
+		    }
+
+		    .features-list li {
+		        margin-bottom: 0;
+		    }
+		}
+
+		/* Отступы для секции "Наши поставщики" */
+		.brands-area {
+		    padding-top: 60px;
+		    padding-bottom: 60px;
 		}

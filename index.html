@@ -3,8 +3,18 @@
 	<head>		
 		<!-- set the encoding of your site -->
 		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="images/Ronks_White.png" />
+		<link rel="shortcut icon" type="image/png" href="images/Ronks_White.png" />
 		<script>
-if (location.hostname !== "ronks.ru") {
+// Для локальной разработки не перенаправляем с localhost / file:// на ronks.ru
+// Редирект оставляем только для сторонних доменов.
+if (
+  location.hostname &&
+  location.hostname !== "ronks.ru" &&
+  location.hostname !== "www.ronks.ru" &&
+  location.hostname !== "localhost" &&
+  location.hostname !== "127.0.0.1"
+) {
   location.replace("https://ronks.ru");
 }
 		</script>
@@ -17,11 +27,11 @@ if (location.hostname !== "ronks.ru") {
 		<!-- set the apple mobile web app status bar style -->
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<!-- set the description -->
-		<meta name="description" content="ronks.ru — агрегатор автозапчастей с поиском аналогов (кроссов)" />
+		<meta name="description" content="Ronks.ru — агрегатор автозапчастей с поиском аналогов (кроссов)" />
 		<!-- set the Keyword -->
 		<meta name="keywords" content="ronks, автозапчасти, кроссы, поиск аналогов, агрегатор запчастей" />
 		<meta name="author" content="ronks.ru" />
-		<title>ronks.ru — агрегатор автозапчастей</title>
+		<title>Ronks.ru — агрегатор автозапчастей</title>
 		<!-- include the site stylesheet -->
 		<link
 			href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7COswald:400,700"
@@ -103,7 +113,7 @@ if (location.hostname !== "ronks.ru") {
 							<header
 								class="heading-holder col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
 								<h1>
-									<span class="text-small">ronks.ru — Всё.Везде.Сразу.</span>
+									<span class="text-small"><span class="brand-name">Ronks.ru</span> — Всё. Везде. Сразу.</span>
 									<span class="hero-main-title">Умный поиск запчастей и предложений поставщиков</span>
 								</h1>
 								<p>
@@ -208,7 +218,7 @@ if (location.hostname !== "ronks.ru") {
 					<div class="container">
 						<div class="row">
 							<div class="col-xs-12 col-md-7">
-								<h2>ХОТИТЕ СТАТЬ ПОСТАВЩИКОМ В RONKS.RU?</h2>
+								<h2>ВЫ ПОСТАВЩИК И ХОТИТЕ ПРИСОЕДИНИТЬСЯ К RONKS.RU?</h2>
 								<p>
 									Подключись к агрегатору уже сегодня — расширяй клиентскую базу без лишних усилий!
 								</p>
@@ -455,7 +465,7 @@ if (location.hostname !== "ronks.ru") {
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
-							<p>© <span id="year"></span> ronks.ru — агрегатор автозапчастей с поиском кроссов.</p>
+							<p>© <span id="year"></span> Ronks.ru — агрегатор автозапчастей с поиском кроссов.</p>
 						</div>
 					</div>
 				</div>
