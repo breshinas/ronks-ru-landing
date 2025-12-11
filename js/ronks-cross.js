@@ -7,11 +7,16 @@
 			const button = document.getElementById("search-button");
 			const errorEl = document.getElementById("error");
 			const tableEl = document.getElementById("tableContainer");
+			const exampleButtons = document.querySelectorAll(".ronks-search-example");
 
 			const PAGE_SIZE = 10;
 			let allItems = [];
 			let visibleCount = 0;
 			let pendingScrollIndex = null;
+
+			function normalizePartNumber(value) {
+				return (value || "").replace(/[^a-zA-Z0-9]/g, "");
+			}
 
 			if (button && input) {
 				button.addEventListener("click", searchCrosses);
@@ -23,16 +28,36 @@
 				});
 			}
 
+			if (exampleButtons.length && input) {
+				exampleButtons.forEach((btn) => {
+					btn.addEventListener("click", () => {
+						const raw = btn.getAttribute("data-query") || btn.textContent.trim();
+						const query = normalizePartNumber(raw);
+						input.value = query;
+						searchCrosses();
+					});
+				});
+			}
+
 			async function searchCrosses() {
-				const partNumber = input.value.trim();
+				const rawPartNumber = input.value;
+				const partNumber = normalizePartNumber(rawPartNumber);
 
 				if (!partNumber) {
+					if (input) {
+						input.value = "";
+					}
 					if (errorEl) {
 						errorEl.textContent = "Введите артикул";
 						errorEl.classList.add("results-search-status--error");
 					}
 					if (tableEl) tableEl.innerHTML = "";
 					return;
+				}
+
+				// показываем пользователю нормализованный артикул
+				if (input) {
+					input.value = partNumber;
 				}
 
 				if (errorEl) {
@@ -58,7 +83,11 @@
 					}
 
 					if (!data.analogList || !data.analogList.a || !data.analogList.a.length) {
-						if (tableEl) tableEl.innerHTML = "<p>Аналоги не найдены.</p>";
+						if (errorEl) {
+							errorEl.textContent = "Артикул не найден. Проверьте правильность ввода номера детали.";
+							errorEl.classList.add("results-search-status--error");
+						}
+						if (tableEl) tableEl.innerHTML = "";
 						return;
 					}
 
@@ -67,9 +96,19 @@
 				} catch (err) {
 					console.error("Ошибка:", err);
 					const message = (err && err.message) || "";
+					const lowerMsg = message.toLowerCase();
+					const isEmptyJson =
+						lowerMsg.includes("json") ||
+						lowerMsg.includes("unexpected end of") ||
+						lowerMsg.includes("unexpected token");
 
 					if (errorEl) {
-						errorEl.textContent = "Не удалось загрузить данные: " + message;
+						if (isEmptyJson) {
+							errorEl.textContent =
+								"Артикул не найден. Проверьте правильность ввода номера детали.";
+						} else {
+							errorEl.textContent = "Не удалось загрузить данные: " + message;
+						}
 						errorEl.classList.add("results-search-status--error");
 					}
 					if (tableEl) tableEl.innerHTML = "";

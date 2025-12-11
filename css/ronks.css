@@ -92,7 +92,33 @@
 		    display: flex;
 		    flex-wrap: wrap;
 		    gap: 10px;
-		    margin-bottom: 8px;
+		    margin-bottom: 0; /* минимум отступа под полем */
+		}
+
+		.ronks-search-examples {
+		    margin-top: -4px; /* визуально прижимаем ближе к нижней границе поля */
+		    font: 400 13px/20px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    color: rgba(0, 0, 0, 0.75);
+		}
+
+		.ronks-search-example {
+		    border: none;
+		    padding: 0;
+		    margin-left: 4px;
+		    background: none;
+		    color: var(--ronks-accent);
+		    text-decoration-line: underline;
+		    text-decoration-style: dashed; /* пунктирное подчёркивание */
+		    text-decoration-thickness: 1px;
+		    cursor: pointer;
+		    font: inherit;
+		}
+
+		.ronks-search-example:hover,
+		.ronks-search-example:focus {
+		    color: var(--ronks-accent);
+		    text-decoration-style: dashed;
+		    text-decoration-thickness: 2px;
 		}
 
 		#part-number {
@@ -192,8 +218,8 @@
 
 #tableContainer p {
     font-size: 16px;
-    font-weight: 700; /* "Аналоги не найдены" / служебные подписи */
-    color: #ffffff;
+    font-weight: 700; /* "Аналоги не найдены" / "Загрузка..." */
+    color: #111827; /* тёмный текст на светлом фоне блока */
 }
 
 		.clickable-row {
@@ -231,9 +257,9 @@
 		}
 
 .results-search-status--error {
-		    color: #fca5a5;
+		    color: #FF0000; /* ярко-красный для ошибок */
 		    font-size: 15px;
-		    font-weight: 700; /* "Ничего не найдено" при поиске в таблице */
+		    font-weight: 700; /* "Ничего не найдено" / ошибки ввода артикула */
 		}
 
 		.more-results {
