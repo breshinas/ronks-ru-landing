@@ -1,4 +1,4 @@
-		:root {
+:root {
 		    --ronks-bg: #97d6df;
 		    --ronks-surface: #0b1721;
 		    --ronks-border: #1f2933;
@@ -41,6 +41,7 @@
 		        line-height: 54px;
 		    }
 		}
+
 
 		/* Отключаем оверлей загрузчика, чтобы он не перекрывал страницу */
 		.loader-holder {
@@ -193,28 +194,29 @@
 		    width: 100%;
 		    border-collapse: collapse;
 		    font-size: 13px;
-		    background: var(--ronks-surface);
+		    background: #ffffff; /* светлый фон, как в примере дизайна */
 		}
 
 #tableContainer th,
 #tableContainer td {
-    border: 1px solid var(--ronks-border);
+    border: 1px solid #e5e7eb; /* светлые границы ячеек */
     padding: 8px 10px;
     text-align: left;
-    color: #ffffff; /* белый текст в таблице результатов */
+    color: #111827; /* тёмный текст в строках */
 }
 
 		#tableContainer th {
-		    background-color: rgba(0, 0, 0, 0.6);
+		    background-color: #f3f4f6; /* фон заголовка таблицы */
+		    font-weight: 600;
+		}
+
+		#tableContainer tr:nth-child(odd) {
+		    background-color: #ffffff; /* нечётные строки */
 		}
 
 		#tableContainer tr:nth-child(even) {
-		    background-color: rgba(0, 0, 0, 0.3);
+		    background-color: #f9fafb; /* чётные строки */
 		}
-
-#tableContainer tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0.18);
-}
 
 #tableContainer p {
     font-size: 16px;
@@ -224,26 +226,38 @@
 
 		.clickable-row {
 		    cursor: pointer;
+		    transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
 		}
 
+		/* При наведении подсвечиваем строку и делаем текст оранжевым */
 		.clickable-row:hover {
-		    background-color: rgba(255, 98, 36, 0.16);
+		    background-color: #fff7f2;
+		}
+
+		/* Более специфичный селектор, чтобы перебить #tableContainer td */
+		#tableContainer tr.clickable-row:hover td {
+		    color: var(--ronks-accent);
 		}
 
 		.results-search {
-		    margin-top: 8px;
+		    margin-top: 0;
+		    margin-bottom: 0;
+		    padding: 8px 10px;
 		    display: flex;
 		    gap: 8px;
 		    align-items: center;
+		    background: #ffffff; /* белый фон строки поиска, чтобы кнопка была видна */
+		    color: #111827;
+		    border-radius: 4px 4px 0 0;
 		}
 
 		.results-search input[type="text"] {
 		    flex: 1 1 220px;
 		    padding: 8px 10px;
 		    border-radius: 4px;
-		    border: 1px solid rgba(255, 255, 255, 0.24);
-		    background: rgba(3, 16, 24, 0.95);
-		    color: #fff;
+		    border: 1px solid rgba(255, 255, 255, 0.35);
+		    background: #111827;
+		    color: #ffffff;
 		    font-size: 13px;
 		}
 
@@ -253,7 +267,7 @@
 
 		.results-search-status {
 		    font-size: 12px;
-		    color: var(--ronks-text-muted);
+		    color: #6b7280; /* спокойный серый статус на белом фоне */
 		}
 
 .results-search-status--error {
@@ -400,6 +414,18 @@
 		    margin-bottom: 40px;
 		}
 
+		/* Ссылки заголовков "Автосервисы и СТО" и др. — оранжевый ховер */
+		.features-area .features-list h3 a {
+		    color: inherit;
+		    transition: color 0.2s ease-in-out;
+		}
+
+		.features-area .features-list h3 a:hover,
+		.features-area .features-list h3 a:focus,
+		.features-area .features-list h3 a:active {
+		    color: var(--ronks-accent);
+		}
+
 		@media (min-width: 992px) {
 		    .features-list {
 		        display: flex;
@@ -416,4 +442,18 @@
 		.brands-area {
 		    padding-top: 60px;
 		    padding-bottom: 60px;
+		}
+
+		/* Гарантируем белый текст у кнопок в demo-block при ховере */
+		.demo-block ul a.btn:hover,
+		.demo-block ul a.btn:focus,
+		.demo-block ul a.btn:active {
+		    color: #ffffff !important;
+		}
+
+		/* На всякий случай фиксируем цвет текста для всех btn-white при ховере */
+		.btn-default.btn-white:hover,
+		.btn-default.btn-white:focus,
+		.btn-default.btn-white:active {
+		    color: #ffffff !important;
 		}
