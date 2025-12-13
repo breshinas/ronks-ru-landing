@@ -483,6 +483,21 @@
 		    padding-bottom: 60px;
 		}
 
+		/* Дополнительное оформление текста в блоке "Поставщики" */
+		.suppliers-lead {
+		    font-weight: 600;
+		    margin-bottom: 10px;
+		}
+
+		.suppliers-list {
+		    margin: 0 0 16px 18px;
+		    padding: 0;
+		}
+
+		.suppliers-list li {
+		    margin-bottom: 4px;
+		}
+
 		/* Гарантируем белый текст у кнопок в demo-block при ховере */
 		.demo-block ul a.btn:hover,
 		.demo-block ul a.btn:focus,
