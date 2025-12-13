@@ -132,6 +132,25 @@
 		    font-size: 14px;
 		}
 
+		/* Фокус инпута поиска кроссов — корпоративный оранжевый */
+		#part-number:focus {
+		    outline: none !important;
+		    border-color: rgba(0, 0, 0, 0.16) !important; /* 1px solid rgba(0,0,0,0.16) */
+		    box-shadow: 0 0 0 2px #000000 !important; /* чёткая чёрная подсветка вокруг */
+		    background-color: #ffffff !important;
+		}
+
+		/* Убираем голубой фон браузерного автозаполнения для поля поиска кроссов и делаем его оранжевым */
+		#part-number:-webkit-autofill,
+		#part-number:-webkit-autofill:hover,
+		#part-number:-webkit-autofill:focus {
+		    /* более светлый оранжевый, чтобы не сливаться с кнопкой */
+		    -webkit-box-shadow: 0 0 0 1000px #FFE7DC inset !important;
+		    box-shadow: 0 0 0 1000px #FFE7DC inset !important;
+		    border-color: rgba(0, 0, 0, 0.16) !important;
+		    color: #111827 !important;
+		}
+
 		#part-number::placeholder {
 		    color: rgba(15, 23, 42, 0.5);
 		}
@@ -206,16 +225,16 @@
 }
 
 		#tableContainer th {
-		    background-color: #f3f4f6; /* фон заголовка таблицы */
+		    background-color: #F0F0F4; /* фон заголовка таблицы по ТЗ */
 		    font-weight: 600;
 		}
 
 		#tableContainer tr:nth-child(odd) {
-		    background-color: #ffffff; /* нечётные строки */
+		    background-color: #FFFFFF; /* нечётные строки */
 		}
 
 		#tableContainer tr:nth-child(even) {
-		    background-color: #f9fafb; /* чётные строки */
+		    background-color: rgba(140, 140, 155, 0.04); /* чётные строки: #8C8C9B 4% */
 		}
 
 #tableContainer p {
@@ -231,7 +250,7 @@
 
 		/* При наведении подсвечиваем строку и делаем текст оранжевым */
 		.clickable-row:hover {
-		    background-color: #fff7f2;
+		    background-color: rgba(140, 140, 155, 0.10); /* #8C8C9B 10% */
 		}
 
 		/* Более специфичный селектор, чтобы перебить #tableContainer td */
@@ -246,23 +265,43 @@
 		    display: flex;
 		    gap: 8px;
 		    align-items: center;
-		    background: #ffffff; /* белый фон строки поиска, чтобы кнопка была видна */
+		    background: #ffffff; /* фон за строкой поиска (как было) */
 		    color: #111827;
 		    border-radius: 4px 4px 0 0;
 		}
 
+		/* Само поле поиска в таблице: фон #8C8C9B 4% и серый бордер */
 		.results-search input[type="text"] {
 		    flex: 1 1 220px;
 		    padding: 8px 10px;
 		    border-radius: 4px;
-		    border: 1px solid rgba(255, 255, 255, 0.35);
-		    background: #111827;
-		    color: #ffffff;
+		    border: 1px solid rgba(0, 0, 0, 0.16);
+		    background: rgba(140, 140, 155, 0.04);
+		    color: #111827;
 		    font-size: 13px;
 		}
 
+		/* Фокус поиска по таблице — тот же оранжевый акцент */
+		#results-search-input:focus {
+		    outline: none !important;
+		    border-color: rgba(0, 0, 0, 0.16) !important; /* 1px solid rgba(0,0,0,0.16) */
+		    box-shadow: 0 0 0 2px #000000 !important; /* чёткая чёрная подсветка вокруг */
+		    background-color: rgba(140, 140, 155, 0.04) !important;
+		}
+
+		/* И аналогично — убираем голубой фон автозаполнения в поиске по таблице и делаем его оранжевым */
+		#results-search-input:-webkit-autofill,
+		#results-search-input:-webkit-autofill:hover,
+		#results-search-input:-webkit-autofill:focus {
+		    /* более светлый оранжевый, чтобы не сливаться с кнопкой */
+		    -webkit-box-shadow: 0 0 0 1000px #FFE7DC inset !important;
+		    box-shadow: 0 0 0 1000px #FFE7DC inset !important;
+		    border-color: rgba(0, 0, 0, 0.16) !important;
+		    color: #111827 !important;
+		}
+
 		.results-search input[type="text"]::placeholder {
-		    color: rgba(255, 255, 255, 0.52);
+		    color: #4b5563; /* тёмно-серый placeholder, хорошо читается на светлом фоне */
 		}
 
 		.results-search-status {
