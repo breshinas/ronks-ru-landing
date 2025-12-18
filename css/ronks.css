@@ -56,7 +56,7 @@
 		    background: transparent; /* как в исходном варианте */
 		    padding-top: 0;
 		    padding-bottom: 40px;
-		    margin-top: 0;
+		    margin-top: 0px;
 		}
 
 		/* На всякий случай явно убираем возможный margin сверху между hero и поиском */
@@ -261,7 +261,7 @@
 		.results-search {
 		    margin-top: 0;
 		    margin-bottom: 0;
-		    padding: 8px 10px;
+		    padding: 16px 2px;
 		    display: flex;
 		    gap: 8px;
 		    align-items: center;
@@ -433,10 +433,46 @@
 			width: fit-content;
 		}
 
+		/* Выравнивание логотипа в футере по левому краю, в линию с логотипом в шапке */
+		.footer-logo-column {
+			text-align: left;
+		}
+
+		.footer-logo-column .logo {
+			margin: 0; /* убираем смещение и дополнительный отступ снизу */
+		}
+
+		.footer-social-column {
+			text-align: right;
+		}
+
+		/* На десктопе выравниваем три блока футера по одной линии */
+		@media (min-width: 768px) {
+			.footer-row {
+				display: flex;
+				align-items: center;
+			}
+		}
+
+		/* Чуть поднимаем блок с копирайтом ближе к логотипу и соцсетям */
+		#footer .aside {
+			padding-top: 20px;
+		}
+
+		.footer-copy {
+			margin-top: 0;
+		}
+
+		/* Копирайт в футере: чуть крупнее и без нижнего отступа */
+		.footer-copy p {
+			margin-bottom: 0;
+			font-size: 12px;
+		}
+
 		/* Отступы и сетка для секции "Для кого сервис" */
 		.features-area {
 		    padding-top: 60px;
-		    padding-bottom: 60px;
+		    padding-bottom: 100px;
 		}
 
 		.features-area .heading-wrap {
@@ -480,7 +516,12 @@
 		/* Отступы для секции "Наши поставщики" */
 		.brands-area {
 		    padding-top: 60px;
-		    padding-bottom: 60px;
+		    padding-bottom: 100px;
+		}
+
+		/* Жёстко задаём нижний отступ футера в 0px, чтобы убрать лишнее пространство */
+		#footer {
+		    padding-bottom: 0 !important;
 		}
 
 		/* Дополнительное оформление текста в блоке "Поставщики" */
