@@ -1,0 +1,602 @@
+[
+  {
+    "Id": "1",
+    "DisplayName": "АвтоЕвро",
+    "Url": "https://shop.autoeuro.ru/",
+    "UrlReg": "https://30.autoeuro.ru/reg"
+  },
+  {
+    "Id": "2",
+    "DisplayName": "Армтек",
+    "Url": "https://etp.armtek.ru/",
+    "UrlReg": "https://etp.armtek.ru/registration"
+  },
+  {
+    "Id": "3",
+    "DisplayName": "Шате-м",
+    "Url": "https://shate-m.ru/",
+    "UrlReg": "https://shate-m.ru/"
+  },
+  {
+    "Id": "4",
+    "DisplayName": "Росско",
+    "Url": "https://el.rossko.ru/",
+    "UrlReg": "https://el.rossko.ru/registration/"
+  },
+  {
+    "Id": "5",
+    "DisplayName": "ФорумАвто",
+    "Url": "https://itrade.forum-auto.ru/",
+    "UrlReg": "https://itrade.forum-auto.ru/shop/register_person.html"
+  },
+  {
+    "Id": "6",
+    "DisplayName": "Фаворит",
+    "Url": "https://lk.favorit-parts.ru/",
+    "UrlReg": "https://favorit-parts.ru/"
+  },
+  {
+    "Id": "7",
+    "DisplayName": "Иксора",
+    "Url": "https://b2b.ixora-auto.ru/",
+    "UrlReg": "https://b2b.ixora-auto.ru/Info/web_servis.html"
+  },
+  {
+    "Id": "8",
+    "DisplayName": "Авторусь",
+    "Url": "https://www.autorus.ru/",
+    "UrlReg": "https://b2b.autorus.ru/api"
+  },
+  {
+    "Id": "9",
+    "DisplayName": "Мотекс",
+    "Url": "https://motexc.ru/",
+    "UrlReg": "https://motexc.ru/"
+  },
+  {
+    "Id": "10",
+    "DisplayName": "Мостекавто/Мостекнорот",
+    "Url": "https://mostekauto.ru/",
+    "UrlReg": "https://mostekauto.ru/"
+  },
+  {
+    "Id": "11",
+    "DisplayName": "ExpoParts",
+    "Url": "https://expoparts.ru/",
+    "UrlReg": "https://expoparts.ru/reg"
+  },
+  {
+    "Id": "12",
+    "DisplayName": "АMX24",
+    "Url": "https://amx24.ru/",
+    "UrlReg": "https://amx24.ru/reg"
+  },
+  {
+    "Id": "13",
+    "DisplayName": "KSMG",
+    "Url": "https://ksmgroup.ru/",
+    "UrlReg": "https://ksmgroup.ru/reg"
+  },
+  {
+    "Id": "14",
+    "DisplayName": "UNPART",
+    "Url": "https://unpart.ru/",
+    "UrlReg": "https://unpart.ru/reg"
+  },
+  {
+    "Id": "15",
+    "DisplayName": "Европарт",
+    "Url": "https://europart.ru",
+    "UrlReg": "https://europart.ru/reg"
+  },
+  {
+    "Id": "16",
+    "DisplayName": "Автопитер",
+    "Url": "https://autopiter.ru/",
+    "UrlReg": "https://autopiter.ru/registration"
+  },
+  {
+    "Id": "17",
+    "DisplayName": "Берг",
+    "Url": "https://berg.ru/",
+    "UrlReg": "https://berg.ru/registration"
+  },
+  {
+    "Id": "18",
+    "DisplayName": "Москворечье",
+    "Url": "https://portal.moskvorechie.ru/",
+    "UrlReg": "https://portal.moskvorechie.ru/index.lmz?mp=1"
+  },
+  {
+    "Id": "19",
+    "DisplayName": "АвтоАльянс",
+    "Url": "https://www.autoopt.ru/",
+    "UrlReg": "https://www.autoopt.ru/site/signup"
+  },
+  {
+    "Id": "20",
+    "DisplayName": "Балткам",
+    "Url": "https://www.baltkam.ru/",
+    "UrlReg": "https://www.baltkam.ru/reg"
+  },
+  {
+    "Id": "21",
+    "DisplayName": "KV-auto",
+    "Url": "https://kv-auto.ru/",
+    "UrlReg": "https://kv-auto.ru/reg"
+  },
+  {
+    "Id": "22",
+    "DisplayName": "ТТК Ривьера",
+    "Url": "https://rv23.ru/",
+    "UrlReg": "https://rv23.ru/reg"
+  },
+  {
+    "Id": "23",
+    "DisplayName": "Автодом",
+    "Url": "https://parts.avtodom.ru/",
+    "UrlReg": "https://parts.avtodom.ru/reg"
+  },
+  {
+    "Id": "24",
+    "DisplayName": "Эльбрус",
+    "Url": "https://elbrus-b2b.ru/",
+    "UrlReg": "https://elbrus-b2b.ru/reg"
+  },
+  {
+    "Id": "25",
+    "DisplayName": "ST-parts",
+    "Url": "https://stparts.ru/",
+    "UrlReg": "https://stparts.ru/reg"
+  },
+  {
+    "Id": "26",
+    "DisplayName": "original-parts.ru",
+    "Url": "https://original-parts.ru/",
+    "UrlReg": "https://original-parts.ru/reg"
+  },
+  {
+    "Id": "27",
+    "DisplayName": "Трак Партс",
+    "Url": "https://trp-parts.ru/",
+    "UrlReg": "https://trp-parts.ru/reg"
+  },
+  {
+    "Id": "28",
+    "DisplayName": "АвтоМир",
+    "Url": "https://part.avtomir.ru/",
+    "UrlReg": "https://part.avtomir.ru/reg"
+  },
+  {
+    "Id": "29",
+    "DisplayName": "АвтоРесурс",
+    "Url": "https://zap.ar-nk.ru/",
+    "UrlReg": "https://zap.ar-nk.ru/reg"
+  },
+  {
+    "Id": "30",
+    "DisplayName": "Автосоюз",
+    "Url": "https://автосоюз.рф/",
+    "UrlReg": "https://автосоюз.рф/Account/RegisterOpt"
+  },
+  {
+    "Id": "31",
+    "DisplayName": "ЛИ-АРТ АВТО",
+    "Url": "https://li-art.ru/",
+    "UrlReg": "https://li-art.ru/reg"
+  },
+  {
+    "Id": "32",
+    "DisplayName": "Гроутас",
+    "Url": "https://groutasauto.ru/",
+    "UrlReg": "https://groutasauto.ru/reg"
+  },
+  {
+    "Id": "33",
+    "DisplayName": "Auger",
+    "Url": "https://augerrus.ru/",
+    "UrlReg": "https://augerrus.ru/coop_request_offices?"
+  },
+  {
+    "Id": "34",
+    "DisplayName": "Schoffer",
+    "Url": "https://shff.ru/",
+    "UrlReg": "https://shff.ru/reg"
+  },
+  {
+    "Id": "35",
+    "DisplayName": "StarTruck",
+    "Url": "https://startruck.shop/",
+    "UrlReg": "https://startruck.shop/reg"
+  },
+  {
+    "Id": "36",
+    "DisplayName": "Агира",
+    "Url": "http://agira-auto.ru/",
+    "UrlReg": "https://agira-auto.ru/login"
+  },
+  {
+    "Id": "37",
+    "DisplayName": "Forward AutoParts",
+    "Url": "https://www.autobody.ru/",
+    "UrlReg": "https://www.autobody.ru/"
+  },
+  {
+    "Id": "38",
+    "DisplayName": "FixAuto",
+    "Url": "https://fixauto.ru/",
+    "UrlReg": "https://fixauto.ru/reg"
+  },
+  {
+    "Id": "39",
+    "DisplayName": "BornParts",
+    "Url": "https://born-parts.ru/",
+    "UrlReg": "https://born-parts.ru/reg"
+  },
+  {
+    "Id": "40",
+    "DisplayName": "ЯмалАвто",
+    "Url": "https://shop.yamalauto.ru/",
+    "UrlReg": "https://shop.yamalauto.ru/reg"
+  },
+  {
+    "Id": "41",
+    "DisplayName": "ИНКАР",
+    "Url": "https://catalog.incar.ru/",
+    "UrlReg": "https://incar.ru/reg"
+  },
+  {
+    "Id": "42",
+    "DisplayName": "Todocar",
+    "Url": "https://todocar.ru/",
+    "UrlReg": "https://todocar.ru/reg"
+  },
+  {
+    "Id": "43",
+    "DisplayName": "Эра-Авто",
+    "Url": "https://era-auto.ru/",
+    "UrlReg": "https://era-auto.ru/customers/new#/new_customer"
+  },
+  {
+    "Id": "44",
+    "DisplayName": "СпецТехРус Сервис",
+    "Url": "https://strzap.ru/",
+    "UrlReg": "https://strzap.ru/customers/new"
+  },
+  {
+    "Id": "45",
+    "DisplayName": "Автопартнер",
+    "Url": "https://zap-pro.ru/",
+    "UrlReg": "https://zap-pro.ru/registration/"
+  },
+  {
+    "Id": "46",
+    "DisplayName": "АТО Трейд",
+    "Url": "https://ato-parts.com/",
+    "UrlReg": "https://ato-parts.com/login#/new_customer"
+  },
+  {
+    "Id": "47",
+    "DisplayName": "ТрансТехСервис",
+    "Url": "https://shop.tts.ru/",
+    "UrlReg": "https://shop.tts.ru/reg"
+  },
+  {
+    "Id": "48",
+    "DisplayName": "ТракМоторс",
+    "Url": "https://market.tmtr.ru/",
+    "UrlReg": "https://market.tmtr.ru/#/fast-registration"
+  },
+  {
+    "Id": "49",
+    "DisplayName": "MPARTS",
+    "Url": "https://v01.ru/",
+    "UrlReg": "https://v01.ru/login/register/"
+  },
+  {
+    "Id": "50",
+    "DisplayName": "AWC",
+    "Url": "https://all-world-cars.com/",
+    "UrlReg": "https://all-world-cars.com/reg"
+  },
+  {
+    "Id": "51",
+    "DisplayName": "Промснаб",
+    "Url": "https://promsnab.spb.ru/",
+    "UrlReg": "https://promsnab.spb.ru/reg"
+  },
+  {
+    "Id": "52",
+    "DisplayName": "ГИГАпартс",
+    "Url": "https://gigaparts.ru",
+    "UrlReg": "https://gigaparts.ru/login#/new_customer"
+  },
+  {
+    "Id": "53",
+    "DisplayName": "Tiss",
+    "Url": "https://tmparts.ru/",
+    "UrlReg": "https://tmparts.ru/Home/Index#listDocBut"
+  },
+  {
+    "Id": "54",
+    "DisplayName": "Стярг",
+    "Url": "https://styarg.parts/",
+    "UrlReg": "https://styarg.parts/reg"
+  },
+  {
+    "Id": "55",
+    "DisplayName": "Japarts",
+    "Url": "https://www.japarts.ru/",
+    "UrlReg": "https://www.japarts.ru/?id=register"
+  },
+  {
+    "Id": "56",
+    "DisplayName": "ZZAP",
+    "Url": "https://www.zzap.ru/",
+    "UrlReg": "https://www.zzap.ru/user/user.aspx"
+  },
+  {
+    "Id": "57",
+    "DisplayName": "ВинтТоп",
+    "Url": "https://vinttop.ru/",
+    "UrlReg": "https://vinttop.ru/reg"
+  },
+  {
+    "Id": "58",
+    "DisplayName": "АВ-Трак",
+    "Url": "https://av-truck.ru/",
+    "UrlReg": "https://av-truck.ru/reg"
+  },
+  {
+    "Id": "59",
+    "DisplayName": "Aspaco",
+    "Url": "https://aspaco.ru/",
+    "UrlReg": "https://aspaco.ru/reg"
+  },
+  {
+    "Id": "60",
+    "DisplayName": "Hapbryansk",
+    "Url": "https://hapbryansk.ru/",
+    "UrlReg": "https://hapbryansk.ru/reg"
+  },
+  {
+    "Id": "61",
+    "DisplayName": "Skladspk",
+    "Url": "https://skladspk.ru/",
+    "UrlReg": "https://skladspk.ru/reg"
+  },
+  {
+    "Id": "62",
+    "DisplayName": "AutoTech",
+    "Url": "https://partgp.ru/",
+    "UrlReg": "https://partgp.ru/reg"
+  },
+  {
+    "Id": "63",
+    "DisplayName": "IversAuto",
+    "Url": "https://order.ivers.ru/",
+    "UrlReg": "https://ivers.ru/cabinet/registration/"
+  },
+  {
+    "Id": "64",
+    "DisplayName": "Carreta",
+    "Url": "https://carreta.ru/",
+    "UrlReg": "https://carreta.ru/auth/"
+  },
+  {
+    "Id": "65",
+    "DisplayName": "Kentek",
+    "Url": "https://kentek.ru/",
+    "UrlReg": "https://kentek.ru/login/register/"
+  },
+  {
+    "Id": "66",
+    "DisplayName": "Trinity-Parts",
+    "Url": "https://trinity-parts.ru/",
+    "UrlReg": "https://trinity-parts.ru/register"
+  },
+  {
+    "Id": "67",
+    "DisplayName": "LiderTruck",
+    "Url": "https://lk.lider-truck.ru/",
+    "UrlReg": "https://lk.lider-truck.ru/register/"
+  },
+  {
+    "Id": "68",
+    "DisplayName": "WestParts",
+    "Url": "https://w-part.ru/",
+    "UrlReg": "https://w-part.ru/"
+  },
+  {
+    "Id": "69",
+    "DisplayName": "АвтоРай",
+    "Url": "https://auto-ray.com/",
+    "UrlReg": "https://auto-ray.com/reg"
+  },
+  {
+    "Id": "70",
+    "DisplayName": "ФАСТАР",
+    "Url": "https://parts-fastar.ru/",
+    "UrlReg": "https://parts-fastar.ru/reg"
+  },
+  {
+    "Id": "71",
+    "DisplayName": "ЕТП ЛОГИСТИК",
+    "Url": "https://etpart.ru/",
+    "UrlReg": "https://etpart.ru/reg"
+  },
+  {
+    "Id": "72",
+    "DisplayName": "zlata auto",
+    "Url": "https://zlataauto.ru/",
+    "UrlReg": "https://zlataauto.ru/reg"
+  },
+  {
+    "Id": "73",
+    "DisplayName": "DFCARS",
+    "Url": "https://dfcars.ru/",
+    "UrlReg": "https://dfcars.ru/reg"
+  },
+  {
+    "Id": "74",
+    "DisplayName": "Стодеталей",
+    "Url": "https://stodetaley.ru/",
+    "UrlReg": "https://stodetaley.ru/reg/?guest_order=1"
+  },
+  {
+    "Id": "75",
+    "DisplayName": "Альянс Партс",
+    "Url": "https://alliance-parts.ru",
+    "UrlReg": "https://alliance-parts.ru/reg"
+  },
+  {
+    "Id": "76",
+    "DisplayName": "БайПарт.Про",
+    "Url": "https://bypart.pro/",
+    "UrlReg": "https://bypart.pro/reg/?switch_to_opt&step2"
+  },
+  {
+    "Id": "77",
+    "DisplayName": "STAR TRUCKS",
+    "Url": "https://star-trucks.shop",
+    "UrlReg": "https://star-trucks.shop/reg"
+  },
+  {
+    "Id": "78",
+    "DisplayName": "Нейс",
+    "Url": "https://shop.neis-gk.ru/",
+    "UrlReg": "https://shop.neis-gk.ru/reg"
+  },
+  {
+    "Id": "79",
+    "DisplayName": "km-h",
+    "Url": "https://km-h.ru/",
+    "UrlReg": "https://km-h.ru/reg"
+  },
+  {
+    "Id": "80",
+    "DisplayName": "АвтоКама",
+    "Url": "https://avtokama-centr.ru/",
+    "UrlReg": "https://avtokama-centr.ru/register"
+  },
+  {
+    "Id": "81",
+    "DisplayName": "Автолавка",
+    "Url": "https://avtolavka.net/",
+    "UrlReg": "https://avtolavka.net/reg"
+  },
+  {
+    "Id": "82",
+    "DisplayName": "Авапт",
+    "Url": "https://avapt.ru/",
+    "UrlReg": "https://avapt.ru/reg"
+  },
+  {
+    "Id": "83",
+    "DisplayName": "Pirate Custom",
+    "Url": "https://piratecustom.ru/",
+    "UrlReg": "https://piratecustom.ru/reg"
+  },
+  {
+    "Id": "84",
+    "DisplayName": "Discount Parts",
+    "Url": "https://discount-parts.ru/",
+    "UrlReg": "https://discount-parts.ru/reg"
+  },
+  {
+    "Id": "85",
+    "DisplayName": "Zap2",
+    "Url": "https://zap2.ru/",
+    "UrlReg": "https://zap2.ru/reg"
+  },
+  {
+    "Id": "86",
+    "DisplayName": "Всё для ТО",
+    "Url": "https://parts.all4to.ru/",
+    "UrlReg": "https://parts.all4to.ru/reg"
+  },
+  {
+    "Id": "87",
+    "DisplayName": "Автоград",
+    "Url": "https://avtozapchasti72.ru/",
+    "UrlReg": "https://avtozapchasti72.ru/reg"
+  },
+  {
+    "Id": "88",
+    "DisplayName": "Zab-Auto",
+    "Url": "https://zab-auto.ru/",
+    "UrlReg": "https://zab-auto.ru/reg"
+  },
+  {
+    "Id": "89",
+    "DisplayName": "Inoparts",
+    "Url": "https://inoparts.ru/",
+    "UrlReg": "https://inoparts.ru/reg"
+  },
+  {
+    "Id": "90",
+    "DisplayName": "СочиАвтоЛидер",
+    "Url": "https://сочиавтолидер.рф/",
+    "UrlReg": "https://сочиавтолидер.рф/reg"
+  },
+  {
+    "Id": "91",
+    "DisplayName": "AM parts",
+    "Url": "https://www.am-zap.ru/",
+    "UrlReg": "https://www.am-zap.ru/reg"
+  },
+  {
+    "Id": "92",
+    "DisplayName": "AM parts",
+    "Url": "https://www.am-zap.ru/",
+    "UrlReg": "https://www.am-zap.ru/reg"
+  },
+  {
+    "Id": "93",
+    "DisplayName": "Клемма",
+    "Url": "https://klemma.by/",
+    "UrlReg": "https://klemma.by/reg"
+  },
+  {
+    "Id": "94",
+    "DisplayName": "163ra",
+    "Url": "https://163ra.ru/",
+    "UrlReg": "https://163ra.ru/reg"
+  },
+  {
+    "Id": "95",
+    "DisplayName": "Шмель Авто",
+    "Url": "https://шмель-авто.рф/",
+    "UrlReg": "https://шмель-авто.рф/reg"
+  },
+  {
+    "Id": "96",
+    "DisplayName": "Аквилон",
+    "Url": "https://opt.akvilon-zap.ru/",
+    "UrlReg": "https://opt.akvilon-zap.ru/reg"
+  },
+  {
+    "Id": "97",
+    "DisplayName": "DriveClub",
+    "Url": "https://driveclub.su/",
+    "UrlReg": "https://driveclub.su/reg"
+  },
+  {
+    "Id": "98",
+    "DisplayName": "Combary",
+    "Url": "https://combary.ru/parts_catalog",
+    "UrlReg": "https://combary.ru/reg"
+  },
+  {
+    "Id": "99",
+    "DisplayName": "MShops",
+    "Url": "https://mshops.ru/",
+    "UrlReg": "https://mshops.ru/customers/new"
+  },
+  {
+    "Id": "100",
+    "DisplayName": "Евроимпульс",
+    "Url": "https://shop.evroimpuls.ru/",
+    "UrlReg": "https://shop.evroimpuls.ru/reg"
+  }
+]

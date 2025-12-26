@@ -435,10 +435,82 @@
                                     поставщиков каждую неделю. Ваш запрос может
                                     ускорить интеграцию!
                                 </p>
-                                <!-- До интеграции страницы о поставщиках, временно блокирую кнопку
-							<a href="https://ronks.ru" target="_blank" rel="noopener noreferrer" class="btn btn-default btn-black"
-									>Подробнее о поставщиках</a
-								> -->
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            <div class="suppliers-widget-block">
+                                <a
+                                    href="#"
+                                    id="suppliers-more-button"
+                                    class="btn btn-default btn-black"
+                                >
+                                    Подробнее о поставщиках
+                                </a>
+
+                                <div
+                                    id="suppliers-widget"
+                                    class="suppliers-widget"
+                                    hidden
+                                >
+                                    <div class="suppliers-search">
+                                        <label
+                                            for="supplier-search-input"
+                                            class="suppliers-search-label"
+                                        >
+                                            Поиск поставщика
+                                        </label>
+                                        <input
+                                            id="supplier-search-input"
+                                            type="text"
+                                            placeholder="Введите наименование поставщика"
+                                        />
+                                        <div class="suppliers-examples">
+                                            Например:
+                                            <button
+                                                type="button"
+                                                class="suppliers-example"
+                                                data-supplier="ВинтТоп"
+                                            >
+                                                ВинтТоп
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="suppliers-example"
+                                                data-supplier="Tiss"
+                                            >
+                                                Tiss
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="suppliers-example"
+                                                data-supplier="Автопитер"
+                                            >
+                                                Автопитер
+                                            </button>
+                                            <button
+                                                type="button"
+                                                class="suppliers-example"
+                                                data-supplier="Japarts"
+                                            >
+                                                Japarts
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        id="supplier-search-result"
+                                        class="suppliers-search-result"
+                                    ></div>
+
+                                    <div
+                                        id="suppliers-table-container"
+                                        class="suppliers-table-container"
+                                    ></div>
+                                </div>
                             </div>
                         </div>
                     </div>

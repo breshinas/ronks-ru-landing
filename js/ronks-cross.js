@@ -14,6 +14,22 @@
 			let visibleCount = 0;
 			let pendingScrollIndex = null;
 
+			// --- Поставщики (suppliers.json) ---
+			const SUPPLIERS_JSON_URL = 'suppliers.json';
+			const SUPPLIERS_PAGE_SIZE = 10;
+
+			let suppliers = [];
+			let suppliersLoaded = false;
+			let suppliersCurrentPage = 1;
+			let suppliersPendingHighlightIndex = null;
+
+			const suppliersMoreBtn = document.getElementById('suppliers-more-button');
+			const suppliersWidget = document.getElementById('suppliers-widget');
+			const supplierSearchInput = document.getElementById('supplier-search-input');
+			const supplierSearchResult = document.getElementById('supplier-search-result');
+			const suppliersTableContainer = document.getElementById('suppliers-table-container');
+			const suppliersExampleButtons = document.querySelectorAll('.suppliers-example');
+
 			function normalizePartNumber(value) {
 				return (value || "").replace(/[^a-zA-Z0-9]/g, "");
 			}
@@ -382,3 +398,219 @@
 				div.textContent = text == null ? "" : String(text);
 				return div.innerHTML;
 			}
+
+			// =========================
+			// Блок работы с поставщиками
+			// =========================
+
+			async function loadSuppliers() {
+				if (suppliersLoaded) return;
+				try {
+					const res = await fetch(SUPPLIERS_JSON_URL);
+					if (!res.ok) {
+						throw new Error('Ошибка загрузки поставщиков');
+					}
+					const data = await res.json();
+					const raw = Array.isArray(data) ? data : [];
+					suppliers = raw.map((s) => ({
+						...s,
+						DisplayName: fixSuppliersEncoding(s.DisplayName)
+					}));
+					suppliersLoaded = true;
+				} catch (e) {
+					console.error(e);
+					if (supplierSearchResult) {
+						supplierSearchResult.textContent = 'Не удалось загрузить список поставщиков.';
+					}
+				}
+			}
+
+			function fixSuppliersEncoding(name) {
+				if (name == null) return '';
+				try {
+					// Обратное преобразование типичного "кракозябров" от UTF-8/CP1251
+					return decodeURIComponent(escape(String(name)));
+				} catch (e) {
+					return String(name);
+				}
+			}
+
+			function renderSuppliersTable(page, highlightIndex) {
+				if (!suppliersTableContainer || !suppliers.length) return;
+
+				const total = suppliers.length;
+				const totalPages = Math.ceil(total / SUPPLIERS_PAGE_SIZE) || 1;
+				suppliersCurrentPage = Math.min(Math.max(page, 1), totalPages);
+
+				const start = (suppliersCurrentPage - 1) * SUPPLIERS_PAGE_SIZE;
+				const slice = suppliers.slice(start, start + SUPPLIERS_PAGE_SIZE);
+
+				const rowsHtml = slice
+					.map((s, idx) => {
+						const globalIndex = start + idx;
+						const name = s.DisplayName || '';
+						const url = s.Url || '#';
+						const reg = s.UrlReg || '#';
+						const shortUrl = url
+							.replace(/^https?:\/\//, '')
+							.replace(/\/$/, '');
+						const isHighlight =
+							typeof highlightIndex === 'number' && globalIndex === highlightIndex;
+						const rowClass = isHighlight ? ' highlight-row' : '';
+						return `
+							<tr class="suppliers-row${rowClass}" data-supplier-index="${globalIndex}">
+							  <td>${s.Id || ''}</td>
+							  <td>${escapeHtml(name)}</td>
+							  <td><a href="${url}" target="_blank" rel="noopener noreferrer">${escapeHtml(shortUrl)}</a></td>
+							  <td><a href="${reg}" target="_blank" rel="noopener noreferrer">Регистрация</a></td>
+							</tr>
+						`;
+					})
+					.join('');
+
+				const tableHtml = `
+					<table class="suppliers-table">
+					  <thead>
+						<tr>
+						  <th>ID</th>
+						  <th>Наименование</th>
+						  <th>Сайт</th>
+						  <th>Регистрация</th>
+						</tr>
+					  </thead>
+					  <tbody>
+						${rowsHtml}
+					  </tbody>
+					</table>
+					<div class="suppliers-pagination">
+					  <button type="button" class="suppliers-page-button" data-page="prev" ${suppliersCurrentPage === 1 ? 'disabled' : ''}>
+						Назад
+					  </button>
+					  <span>Страница ${suppliersCurrentPage} из ${totalPages}</span>
+					  <button type="button" class="suppliers-page-button" data-page="next" ${suppliersCurrentPage === totalPages ? 'disabled' : ''}>
+						Вперёд
+					  </button>
+					</div>
+				`;
+
+				suppliersTableContainer.innerHTML = tableHtml;
+
+				// обработка пагинации
+				const pagContainer = suppliersTableContainer.querySelector('.suppliers-pagination');
+				if (pagContainer) {
+					pagContainer.addEventListener(
+						'click',
+						(evt) => {
+							const btn = evt.target.closest('button[data-page]');
+							if (!btn) return;
+							if (btn.dataset.page === 'prev') {
+								renderSuppliersTable(suppliersCurrentPage - 1);
+							} else if (btn.dataset.page === 'next') {
+								renderSuppliersTable(suppliersCurrentPage + 1);
+							}
+						},
+						{ once: true }
+					);
+				}
+
+				// если есть индекс для подсветки, прокручиваем к строке и мигаем рамкой
+				if (typeof highlightIndex === 'number') {
+					const row = suppliersTableContainer.querySelector(
+						`tr[data-supplier-index="${highlightIndex}"]`
+					);
+					if (row) {
+						row.classList.add('highlight-row');
+						row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+						setTimeout(() => row.classList.remove('highlight-row'), 2000);
+					}
+				}
+			}
+
+			async function handleSupplierSearch() {
+				if (!supplierSearchInput || !supplierSearchResult) return;
+
+				// Гарантируем, что данные поставщиков подгружены перед поиском
+				await loadSuppliers();
+				if (!suppliers.length) {
+					supplierSearchResult.textContent = 'Поставщики не найдены.';
+					if (suppliersTableContainer) suppliersTableContainer.innerHTML = '';
+					return;
+				}
+
+				// Автоматически раскрываем виджет, даже если пользователь не нажимал кнопку
+				if (suppliersWidget && suppliersWidget.hasAttribute('hidden')) {
+					suppliersWidget.removeAttribute('hidden');
+				}
+
+				const query = supplierSearchInput.value.trim().toLowerCase();
+				if (!query) {
+					supplierSearchResult.textContent = '';
+					if (suppliersTableContainer) {
+						suppliersTableContainer.innerHTML = '';
+					}
+					return;
+				}
+
+				const idx = suppliers.findIndex((s) =>
+					(s.DisplayName || '').toLowerCase().includes(query)
+				);
+
+				if (idx === -1) {
+					supplierSearchResult.textContent = 'Поставщик не найден.';
+					if (suppliersTableContainer) {
+						suppliersTableContainer.innerHTML = '';
+					}
+					return;
+				}
+
+				const found = suppliers[idx];
+				const name = found.DisplayName || '';
+				const url = found.Url || '#';
+				const shortUrl = url
+					.replace(/^https?:\/\//, '')
+					.replace(/\/$/, '');
+
+				supplierSearchResult.innerHTML =
+					`Найден поставщик: <strong>${escapeHtml(name)}</strong> — ` +
+					`<a href="${url}" target="_blank" rel="noopener noreferrer">${escapeHtml(shortUrl)}</a>`;
+
+				// переходим на страницу с найденным поставщиком и подсвечиваем строку
+				const page = Math.floor(idx / SUPPLIERS_PAGE_SIZE) + 1;
+				renderSuppliersTable(page, idx);
+			}
+
+			if (suppliersMoreBtn && suppliersWidget) {
+				suppliersMoreBtn.addEventListener('click', async (evt) => {
+					if (evt && evt.preventDefault) evt.preventDefault();
+					await loadSuppliers();
+
+					if (suppliersWidget.hasAttribute('hidden')) {
+						// При первом открытии сразу рендерим таблицу, если есть данные
+						if (suppliers.length) {
+							renderSuppliersTable(1);
+						}
+						suppliersWidget.removeAttribute('hidden');
+					} else {
+						suppliersWidget.setAttribute('hidden', '');
+					}
+				});
+			}
+
+			if (supplierSearchInput) {
+				supplierSearchInput.addEventListener('input', () => {
+					// не ждём результата, просто запускаем асинхронный поиск
+					handleSupplierSearch();
+				});
+			}
+
+			if (suppliersExampleButtons.length && supplierSearchInput) {
+				suppliersExampleButtons.forEach((btn) => {
+					btn.addEventListener('click', async () => {
+						const value = btn.getAttribute('data-supplier') || btn.textContent.trim();
+						supplierSearchInput.value = value;
+						await handleSupplierSearch();
+					});
+				});
+			}
+
+			// Кнопки "Показать всех" больше нет

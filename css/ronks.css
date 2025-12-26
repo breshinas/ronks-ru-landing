@@ -160,7 +160,8 @@
 		.results-search button,
 		.more-results-button,
 		.collapse-results-button,
-		.reset-results-button {
+		.reset-results-button,
+		.suppliers-page-button {
 		    padding: 10px 24px;
 		    border-radius: 999px;
 		    border: 2px solid #111827;
@@ -183,7 +184,9 @@
 		.results-search button:hover,
 		.more-results-button:hover,
 		.collapse-results-button:hover,
-		.reset-results-button:hover {
+		.reset-results-button:hover,
+		.suppliers-page-button:hover,
+		.suppliers-page-button:focus {
 		    background: #FF6224;
 		    border-color: #FF6224;
 		    color: #ffffff;
@@ -193,7 +196,8 @@
 		#search-button:active,
 		.results-search button:active,
 		.more-results-button:active,
-		.collapse-results-button:active {
+		.collapse-results-button:active,
+		.suppliers-page-button:active {
 		    transform: translateY(0);
 		}
 
@@ -537,6 +541,160 @@
 
 		.suppliers-list li {
 		    margin-bottom: 4px;
+		}
+
+		/* Виджет поставщиков: поиск + таблица */
+		.suppliers-widget-block {
+		    margin-top: 16px;
+		    margin-left: auto;
+		    margin-right: auto;
+		    max-width: 720px;
+		    text-align: center;
+		}
+
+		.suppliers-widget {
+		    margin-top: 16px;
+		    display: inline-block;
+		    text-align: left;
+		    width: 100%;
+		}
+
+		.suppliers-search {
+		    margin-top: 8px; /* ближе к кнопке "Подробнее о поставщиках" */
+		    margin-bottom: 16px;
+		    display: flex;
+		    flex-direction: column;
+		    align-items: center; /* центрируем поле под кнопкой */
+		}
+
+		.suppliers-search-label {
+		    display: block;
+		    margin-bottom: 4px;
+		    font-weight: 600;
+		    width: 100%;
+		    max-width: 360px;
+		    text-align: left;
+		}
+
+		#supplier-search-input {
+		    width: 100%;
+		    max-width: 360px;
+		}
+
+		.suppliers-examples {
+		    margin-top: 2px; /* сразу под полем поиска поставщика */
+		    font: 400 13px/20px "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    color: rgba(0, 0, 0, 0.75);
+		    width: 100%;
+		    max-width: 360px;
+		    text-align: left;        /* "Например:" и ссылки выровнены по левому краю */
+		    align-self: center;      /* горизонтально совпадает с полем и лейблом */
+		}
+
+		.suppliers-example {
+		    border: none;
+		    padding: 0;
+		    margin-left: 4px;
+		    background: none;
+		    color: var(--ronks-accent);
+		    text-decoration-line: underline;
+		    text-decoration-style: dashed;
+		    text-decoration-thickness: 1px;
+		    cursor: pointer;
+		    font: inherit;
+		}
+
+		.suppliers-example:hover,
+		.suppliers-example:focus {
+		    color: var(--ronks-accent);
+		    text-decoration-style: dashed;
+		    text-decoration-thickness: 2px;
+		}
+
+		.suppliers-search-result {
+		    margin-top: 4px;
+		    margin-bottom: 8px;
+		}
+
+		.suppliers-search-result a {
+		    color: inherit;
+		    text-decoration: none;
+		}
+
+		.suppliers-search-result a:hover,
+		.suppliers-search-result a:focus {
+		    color: var(--ronks-accent);
+		}
+
+		.suppliers-table-container {
+		    margin-top: 8px;
+		    overflow-x: auto;
+		}
+
+		/* Таблица поставщиков стилизуем так же, как таблицу результатов поиска кроссов */
+		.suppliers-table-container table {
+		    width: 100%;
+		    border-collapse: collapse;
+		    font-size: 13px;
+		    background: #ffffff;
+		    table-layout: fixed; /* фиксируем ширину колонок между страницами */
+		}
+
+		/* Фиксированные пропорции колонок таблицы поставщиков */
+		.suppliers-table-container th:nth-child(1),
+		.suppliers-table-container td:nth-child(1) {
+		    width: 8%;   /* ID */
+		}
+
+		.suppliers-table-container th:nth-child(2),
+		.suppliers-table-container td:nth-child(2) {
+		    width: 37%;  /* Наименование */
+		}
+
+		.suppliers-table-container th:nth-child(3),
+		.suppliers-table-container td:nth-child(3) {
+		    width: 27%;  /* Сайт */
+		}
+
+		.suppliers-table-container th:nth-child(4),
+		.suppliers-table-container td:nth-child(4) {
+		    width: 28%;  /* Регистрация */
+		}
+
+		.suppliers-table-container th,
+		.suppliers-table-container td {
+		    border: 1px solid #e5e7eb;
+		    padding: 8px 10px;
+		    text-align: left;
+		    color: #111827;
+		}
+
+		.suppliers-table-container th {
+		    background-color: #F0F0F4;
+		    font-weight: 600;
+		}
+
+		.suppliers-table-container tr:nth-child(odd) {
+		    background-color: #FFFFFF;
+		}
+
+		.suppliers-table-container tr:nth-child(even) {
+		    background-color: rgba(140, 140, 155, 0.04);
+		}
+
+		/* При наведении на строку поставщика ведём себя как в таблице кроссов */
+		.suppliers-table-container tr.suppliers-row:hover td,
+		.suppliers-table-container tr.suppliers-row:hover td a {
+		    color: var(--ronks-accent);
+		}
+
+		.suppliers-pagination {
+		    display: flex;
+		    align-items: center;
+		    justify-content: flex-end; /* прижимаем кнопки к правому краю таблицы */
+		    gap: 12px;
+		    font-size: 13px;
+		    margin-top: 8px;
 		}
 
 		/* Гарантируем белый текст у кнопок в demo-block при ховере */
