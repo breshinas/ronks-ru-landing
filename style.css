@@ -2198,3 +2198,50 @@ a:hover, a:focus, a.active {
   position: absolute;
   transform: translate(-50%, -50%);
 }
+
+/* Стили для копирования в таблице */
+.copyable-cell {
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.copyable-cell:hover {
+    background-color: rgba(255, 96, 19, 0.05);
+}
+
+.copy-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    vertical-align: middle;
+    color: #ff6013;
+}
+
+.copyable-cell:hover .copy-icon {
+    opacity: 1;
+}
+
+.copy-icon svg {
+    width: 14px;
+    height: 14px;
+    pointer-events: none;
+}
+
+.copy-tooltip {
+    position: absolute;
+    background: #333;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    white-space: nowrap;
+    z-index: 10;
+}
