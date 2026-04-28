@@ -22,19 +22,51 @@
                 location.replace("https://ronks.ru");
             }
         </script>
-		<!-- Yandex.Metrika counter -->
-		<script type="text/javascript">
-				(function(m,e,t,r,i,k,a){
-				m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-				m[i].l=1*new Date();
-				for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-				k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-				})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106041263', 'ym');
+        <!-- Yandex.Metrika counter -->
+        <script type="text/javascript">
+            (function (m, e, t, r, i, k, a) {
+                m[i] =
+                    m[i] ||
+                    function () {
+                        (m[i].a = m[i].a || []).push(arguments);
+                    };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                ((k = e.createElement(t)),
+                    (a = e.getElementsByTagName(t)[0]),
+                    (k.async = 1),
+                    (k.src = r),
+                    a.parentNode.insertBefore(k, a));
+            })(
+                window,
+                document,
+                "script",
+                "https://mc.yandex.ru/metrika/tag.js?id=106041263",
+                "ym",
+            );
 
-				ym(106041263, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
-		</script>
-		<noscript><div><img src="https://mc.yandex.ru/watch/106041263" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-		<!-- /Yandex.Metrika counter -->
+            ym(106041263, "init", {
+                ssr: true,
+                webvisor: true,
+                clickmap: true,
+                ecommerce: "dataLayer",
+                accurateTrackBounce: true,
+                trackLinks: true,
+            });
+        </script>
+        <noscript
+            ><div>
+                <img
+                    src="https://mc.yandex.ru/watch/106041263"
+                    style="position: absolute; left: -9999px"
+                    alt=""
+                /></div
+        ></noscript>
+        <!-- /Yandex.Metrika counter -->
         <!-- set the viewport width and initial-scale on mobile devices -->
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <!-- set the apple mobile web app capable -->
@@ -145,11 +177,16 @@
                                     </li>
                                     <li>
                                         <a href="#" data-scroll-nav="3"
-                                            >Видео</a
+                                            >Новости</a
                                         >
                                     </li>
                                     <li>
                                         <a href="#" data-scroll-nav="4"
+                                            >Видео</a
+                                        >
+                                    </li>
+                                    <li>
+                                        <a href="#" data-scroll-nav="5"
                                             >Поставщики</a
                                         >
                                     </li>
@@ -191,7 +228,7 @@
                                     Ronks объединяет предложения поставщиков
                                     автозапчастей и помогает быстро находить
                                     оригиналы и аналоги по номеру детали
-                                    (артикулу).
+                                    (артикулу) и оформлять заказы.
                                 </p>
                             </header>
                         </div>
@@ -372,11 +409,40 @@
                     </div>
                 </aside>
                 <!-- Demo block of the page end -->
+
+                <!-- News block of the page -->
+                <section class="news-area container" data-scroll-index="3">
+                    <div class="row">
+                        <header
+                            class="col-xs-12 heading-wrap col-sm-6 col-sm-offset-3 text-center"
+                        >
+                            <h2>Новости Ronks</h2>
+                        </header>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul
+                                id="news-list"
+                                class="news-grid list-unstyled"
+                            ></ul>
+                            <div class="text-center">
+                                <button
+                                    id="news-load-more"
+                                    class="btn btn-default btn-black"
+                                >
+                                    Показать ещё
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- News block of the page end -->
+
                 <!-- Video block of the page -->
-                <aside class="video-block" data-scroll-index="3">
+                <aside class="video-block" data-scroll-index="4">
                     <div class="video overlay">
                         <img
-                            src="images/2600-430.jpg"
+                            src="images/Ronks-Apps.png"
                             alt="image description"
                             class="img-responsive"
                         />
@@ -390,7 +456,7 @@
                 <!-- Video block of the page end -->
 
                 <!-- Trial block of the page -->
-                <section class="trial-block container" data-scroll-index="4">
+                <section class="trial-block container" data-scroll-index="5">
                     <div class="row">
                         <div class="alignleft">
                             <img
@@ -448,7 +514,6 @@
                                     поставщиков каждую неделю. Ваш запрос может
                                     ускорить интеграцию!
                                 </p>
-
                             </div>
                         </div>
                     </div>
@@ -881,6 +946,7 @@
         <script src="js/particles.js"></script>
 
         <script src="js/ronks-video.js"></script>
+        <script src="js/ronks-news.js"></script>
 
         <div id="style-changer" data-src="style-changer.html"></div>
 
