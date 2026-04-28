@@ -3,7 +3,7 @@
   "use strict";
 
   var NEWS_JSON_URL = "news.json";
-  var NEWS_PER_PAGE = 3;
+  var NEWS_PER_PAGE = 999;
   var newsList = document.getElementById("news-list");
   var loadMoreBtn = document.getElementById("news-load-more");
   var newsItems = [];
@@ -98,7 +98,7 @@
     visibleCount = NEWS_PER_PAGE;
 
     // Initial check: if there are fewer or equal items to page size, hide button
-    if (newsItems.length <= NEWS_PER_PAGE) {
+    if (newsItems.length <= visibleCount) {
       loadMoreBtn.style.display = "none";
     }
 
