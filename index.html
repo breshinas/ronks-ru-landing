@@ -165,11 +165,14 @@
                                             >О сервисе</a
                                         >
                                     </li>
-                                    <li>
-                                        <a href="#" data-scroll-nav="1"
-                                            >Поиск кроссов</a
-                                        >
-                                    </li>
+                                    <!-- ВРЕМЕННО ОТКЛЮЧЕНО: раздел "Поиск кроссов" (бэкенд недоступен).
+                                                                             Возврат: снять комментарий ниже.
+                                                                        <li>
+                                                                            <a href="#" data-scroll-nav="1"
+                                                                                >Поиск кроссов</a
+                                                                            >
+                                                                        </li>
+                                                                        -->
                                     <li>
                                         <a href="#" data-scroll-nav="2"
                                             >Для кого</a
@@ -239,72 +242,75 @@
                 </section>
                 <!-- Hero area of the page end -->
                 <!-- Product Features of the page -->
-                <section class="container ronks-search" data-scroll-index="1">
-                    <div class="row">
-                        <header class="heading-wrap text-center">
-                            <h2>Поиск кроссов автозапчастей</h2>
-                        </header>
-                        <div class="col-xs-12 col-md-8 col-md-offset-2">
-                            <form id="search-form">
-                                <label
-                                    for="part-number"
-                                    class="ronks-search-label"
-                                    >Номер запчасти или артикул</label
-                                >
-                                <div class="ronks-search-row">
-                                    <input
-                                        id="part-number"
-                                        type="text"
-                                        placeholder="Например, 06F 129 101 N"
-                                    />
-                                    <button type="button" id="search-button">
-                                        Найти кроссы
-                                    </button>
-                                </div>
-                                <div id="error"></div>
-                                <div class="ronks-search-examples">
-                                    Например:
-                                    <button
-                                        type="button"
-                                        class="ronks-search-example"
-                                        data-query="OF0126S"
-                                    >
-                                        OF0126S GREEN FILTER
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="ronks-search-example"
-                                        data-query="258986505"
-                                    >
-                                        BOSCH 258986505
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="ronks-search-example"
-                                        data-query="PF1116"
-                                    >
-                                        PATRON PF1116
-                                    </button>
-                                    <button
-                                        type="button"
-                                        class="ronks-search-example"
-                                        data-query="GB9113"
-                                    >
-                                        GB9113 BIG FILTER
-                                    </button>
-                                </div>
-                            </form>
-                            <header class="heading-wrap text-center">
-                                <h5>
-                                    Введите артикул или номер детали — Ronks
-                                    сопоставит его с базой производителей и
-                                    вернёт оригиналы и их аналоги.
-                                </h5>
-                            </header>
-                            <div id="tableContainer"></div>
-                        </div>
-                    </div>
-                </section>
+                <!-- ВРЕМЕННО ОТКЛЮЧЕНО: секция "Поиск кроссов" (бэкенд недоступен).
+                                     Возврат: снять комментарий ниже.
+                                <section class="container ronks-search" data-scroll-index="1">
+                                    <div class="row">
+                                        <header class="heading-wrap text-center">
+                                            <h2>Поиск кроссов автозапчастей</h2>
+                                        </header>
+                                        <div class="col-xs-12 col-md-8 col-md-offset-2">
+                                            <form id="search-form">
+                                                <label
+                                                    for="part-number"
+                                                    class="ronks-search-label"
+                                                    >Номер запчасти или артикул</label
+                                                >
+                                                <div class="ronks-search-row">
+                                                    <input
+                                                        id="part-number"
+                                                        type="text"
+                                                        placeholder="Например, 06F 129 101 N"
+                                                    />
+                                                    <button type="button" id="search-button">
+                                                        Найти кроссы
+                                                    </button>
+                                                </div>
+                                                <div id="error"></div>
+                                                <div class="ronks-search-examples">
+                                                    Например:
+                                                    <button
+                                                        type="button"
+                                                        class="ronks-search-example"
+                                                        data-query="OF0126S"
+                                                    >
+                                                        OF0126S GREEN FILTER
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="ronks-search-example"
+                                                        data-query="258986505"
+                                                    >
+                                                        BOSCH 258986505
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="ronks-search-example"
+                                                        data-query="PF1116"
+                                                    >
+                                                        PATRON PF1116
+                                                    </button>
+                                                    <button
+                                                        type="button"
+                                                        class="ronks-search-example"
+                                                        data-query="GB9113"
+                                                    >
+                                                        GB9113 BIG FILTER
+                                                    </button>
+                                                </div>
+                                            </form>
+                                            <header class="heading-wrap text-center">
+                                                <h5>
+                                                    Введите артикул или номер детали — Ronks
+                                                    сопоставит его с базой производителей и
+                                                    вернёт оригиналы и их аналоги.
+                                                </h5>
+                                            </header>
+                                            <div id="tableContainer"></div>
+                                        </div>
+                                    </div>
+                                </section>
+                                -->
                 <!-- Product Features of the page end -->
                 <!-- Features area of the page -->
                 <section class="features-area container" data-scroll-index="2">
@@ -954,8 +960,9 @@
         <!-- <script>
 			window.API_BASE_URL = 'https://your-api-domain.com';
 		</script> -->
-        <!-- Для локальной разработки (когда API на том же домене) оставьте пустым -->
-
-        <script src="js/ronks-cross.js"></script>
+        <!-- ВРЕМЕННО ОТКЛЮЧЕНО: подключение скрипта поиска кроссов (бэкенд недоступен).
+                     Возврат: снять комментарий ниже.
+                <script src="js/ronks-cross.js"></script>
+                -->
     </body>
 </html>
